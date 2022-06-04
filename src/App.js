@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Services from "./pages/Services";
+import { HomeContext } from "./context/Context";
+import Header from "./components/header/Header";
+
+const state = {};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <HomeContext.Provider value={state}>
+      <header className=" bg-yellow-900 w-full ">
+        <Header />
       </header>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="Services" element={<Services />} />
+      </Routes>
+    </HomeContext.Provider>
   );
 }
 
