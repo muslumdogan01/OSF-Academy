@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       colors: {
         "header-text": "#45413e",
+        "osf-logo-color":"#011847",
+        "academy-logo-color":"#84bc22",
       },
     },
   },

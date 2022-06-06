@@ -10,7 +10,7 @@ const state = {};
 function App() {
   return (
     <HomeContext.Provider value={state}>
-      <header className=" bg-yellow-900 w-full ">
+      <header className="w-full">
         <Header />
       </header>
       <Routes>
