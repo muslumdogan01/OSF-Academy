@@ -29,28 +29,28 @@ const Header = () => {
           </li>
           <li className="mx-4 my-6 md:my-0 md:flex hidden cursor-pointer">
             <img
-              src="https://raw.githubusercontent.com/muslumdogan01/OSF-Academy/master/public/search.png?token=GHSAT0AAAAAABURP4KUKIELQZWPG2LNKXSUYU66YKQ"
+              src="/search.png"
               className="border-none"
               alt="Search"
             />
           </li>
           <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
             <img
-              src="https://raw.githubusercontent.com/muslumdogan01/OSF-Academy/master/public/profil.png?token=GHSAT0AAAAAABURP4KUD7IZK7NU3CQNJDPEYU66WGQ"
+              src="/profil.png"
               className="border-none"
               alt="Profile"
             />
           </li>
           <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
             <img
-              src="https://raw.githubusercontent.com/muslumdogan01/OSF-Academy/master/public/heart.png?token=GHSAT0AAAAAABURP4KV6CCOPUOSJEYMAG6EYU66XMA"
+              src="/heart.png"
               className="border-none"
               alt="Favorite"
             />
           </li>
           <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
             <img
-              src="https://raw.githubusercontent.com/muslumdogan01/OSF-Academy/master/public/shop.png?token=GHSAT0AAAAAABURP4KUMWA2V53LM2NEI3MKYU66VBQ"
+              src="/shop.png"
               className="border-none"
               alt="Shopping"
             />
