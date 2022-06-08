@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dropList:hover{
+    background-color: #262a32 !important;
+}
+.dropList:hover .dropSpan{
+    color: white !important;
+}
+.dropList:hover #serviceIcon{
+    color: white !important;
+}
