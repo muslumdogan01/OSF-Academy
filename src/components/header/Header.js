@@ -3,6 +3,7 @@ import { Icon } from "../../Icons/Icon";
 import Dropdown from "./Dropdown";
 import Logo from "./Logo";
 import { HomeContext, useContext } from "../../context/Context";
+import Modal from "../Modal";
 
 const Header = () => {
 
@@ -26,14 +27,35 @@ const Header = () => {
           <li className="mx-4 my-6 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] md:my-0 text-header-text text-[14px] p-3 hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
           LIBRARY
           </li>
-          <li className="mx-4 my-6 md:hover:border-b-[3px] hover:border-[#84bc22] md:my-0 text-header-text text-[14px] p-3 hover:bg-[#262a32] hover:tran text-white md:text-header-text md:hover:text-white cursor-pointer">
+          <li className="mx-4 my-6 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] md:my-0 text-header-text text-[14px] p-3 hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
             CONTACT US
           </li>
           <li className="mx-4 my-6 md:my-0 text-header-text text-[14px]  md:flex hidden  cursor-pointer">
-           EN
+          <div className="flex items-center">
+          <select
+            id="currency"
+            name="currency"
+            className="focus:outline-none focus:ring-0 border-0 border-none cursor-pointer text-[#b1b0b0] h-full py-0 pr-1 border-0 border-none bg-transparent text-gray-500 sm:text-sm rounded-md"
+          >
+            <option className="border-0 border-none text-[#b1b0b0]">EN</option>
+            <option className="border-0 border-none text-[#b1b0b0]">FR</option>
+            <option className="border-0 border-none text-[#b1b0b0]">UA</option>
+          </select>
+        </div>
           </li>
           <li className="mx-4 my-6 md:my-0 text-header-text text-[14px] md:flex hidden  cursor-pointer">
-            $ US
+          <div className="flex items-center">
+            <span className="cursor-pointer text-[#b1b0b0]">$</span>
+          <select
+            id="currency"
+            name="currency"
+            className="focus:outline-none focus:ring-0 cursor-pointer text-[#b1b0b0] border-none h-full py-0 pr-1 border-0 border-none bg-transparent text-gray-500 sm:text-sm rounded-md"
+          >
+            <option className="border-0 border-none">USD</option>
+            <option className="border-0 border-none">CAD</option>
+            <option className="border-0 border-none">EUR</option>
+          </select>
+        </div>
           </li>
           <li className="mx-4 my-6 md:my-0 md:flex hidden cursor-pointer">
             <img
@@ -43,11 +65,7 @@ const Header = () => {
             />
           </li>
           <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
-            <img
-              src="/profil.png"
-              className="border-none"
-              alt="Profile"
-            />
+          <Modal/>
           </li>
           <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
             <img
@@ -63,6 +81,7 @@ const Header = () => {
               alt="Shopping"
             />
           </li>
+
 
         </ul>
       </div>
