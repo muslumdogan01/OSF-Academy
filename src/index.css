@@ -15,9 +15,25 @@
 .swiper-pagination-bullet-active{
     background-color: white !important;
 }
+.swiper{
+    width: 1172px !important;
+    height: 507px !important;
+    border-radius: 10px !important;
+}
+
+
+  /* @media (min-width: 1000px) { 
+    .swiper {
+        width: 960px !important;
+        height: auto !important;
+        border-radius: 10px !important;
+        top: 0 !important;
+      }
+  } */
 
 @media screen and (max-width: 600px) {
     .swiper {
+ 
       width: 365px !important;
       height: 400px !important;
       border-radius: 10px !important;

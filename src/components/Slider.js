@@ -7,6 +7,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+
 const Slider = () => {
   return (
     <Swiper
@@ -20,19 +24,20 @@ const Slider = () => {
       onSlideChange={() => console.log("slide change")}
       loop={true}
       a11y={true}
+     
 
     >
       <SwiperSlide>
-        <img src="/slider1.png" style={{ width: "100%" , height:"100%" }} alt="" />
+        <img src="/slider1.png" style={{ width: "100%"  }} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/slider2.png" style={{ width: "100%" , height:"100%"  }} alt="" />
+        <img src="/slider2.png" style={{ width: "100%"  }} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/slider3.png" style={{ width: "100%" , height:"100%"  }} alt="" />
+        <img src="/slider3.png" style={{ width: "100%"  }} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/slider2.png" style={{ width: "100%", height:"100%"  }} alt="" />
+        <img src="/slider2.png" style={{ width: "100%"  }} alt="" />
       </SwiperSlide>
       <div className="absolute text-white left-0 top-0 z-10 w-full">
         <div className="md:px-16 md:py-20 px-4 py-2">
