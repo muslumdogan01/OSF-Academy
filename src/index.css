@@ -12,9 +12,22 @@
     color: white !important;
 }
 
-.rsis-container{
-
+.swiper-pagination-bullet-active{
+    background-color: white !important;
 }
-.rsis-image{
 
-}
+@media screen and (max-width: 600px) {
+    .swiper {
+      width: 365px !important;
+      height: 400px !important;
+      border-radius: 10px !important;
+      top: 0 !important;
+    }
+    .swiper img{
+        width: 100% !important;
+        height: 100% !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    }

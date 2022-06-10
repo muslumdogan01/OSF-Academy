@@ -16,18 +16,18 @@ const Header = () => {
       </div>
       <div className="flex md:justify-center">
         <ul className={`md:flex md:items-center justify-center transition-all duration-500 ease-in z-10 md:bg-white bg-[#262a32] w-full
-          ${isOpen ? 'top-20 opacity-100':'top-[-40]'} md:opacity-100 opacity-0
+          ${isOpen ? 'top-20 opacity-100':'top-[-40] hidden '}  md:opacity-100 opacity-0
         `}>
-          <li className="mx-4 my-6 md:my-0 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] text-header-text text-[14px] p-3  hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
+          <li className="mx-4 my-6 md:my-0 md:hover:border-b-[3px]  font-semibold hover:border-[#84bc22]  text-[14px] p-3  hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
             <Dropdown name="SERVICES"/>
           </li>
-          <li className="mx-4 my-6 md:my-0 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] text-header-text text-[14px] p-3  hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
+          <li className="mx-4 my-6 md:my-0 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] text-[14px] p-3  hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
           COMPANY
           </li>
-          <li className="mx-4 my-6 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] md:my-0 text-header-text text-[14px] p-3 hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
+          <li className="mx-4 my-6 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] md:my-0  text-[14px] p-3 hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
           LIBRARY
           </li>
-          <li className="mx-4 my-6 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] md:my-0 text-header-text text-[14px] p-3 hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
+          <li className="mx-4 my-6 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] md:my-0  text-[14px] p-3 hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
             CONTACT US
           </li>
           <li className="mx-4 my-6 md:my-0 text-header-text text-[14px]  md:flex hidden  cursor-pointer">

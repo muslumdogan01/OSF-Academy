@@ -96,9 +96,9 @@ export default function Example({ name }) {
                       </div>
                       <div class="basis-1/2">
                         <ul className="mt-8">
-                          {categories.map((item) => {
+                          {categories.map((item, index) => {
                             return (
-                              <li className="py-3 pb-0 cursor-text">
+                              <li key={index} className="py-3 pb-0 cursor-text">
                                 <a
                                   className="hover:text-[#84bc22] hover:underline"
                                   href={item.href}
