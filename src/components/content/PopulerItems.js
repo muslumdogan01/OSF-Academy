@@ -77,30 +77,7 @@ const items = [
     price: "$100",
     image: "popularItems/img4.png",
   },
-  {
-    id: 13,
-    name: "TORY DESK CALENDAR",
-    price: "$100",
-    image: "popularItems/img7.png",
-  },
-  {
-    id: 14,
-    name: "Hay - About A Lounge Chair AAL 93",
-    price: "$100",
-    image: "popularItems/img6.png",
-  },
-  {
-    id: 15,
-    name: "Kristina Dam Oak Table With White Marble Top",
-    price: "$100",
-    image: "popularItems/img2.png",
-  },
-  {
-    id: 16,
-    name: "Cocktail Table Walnut | YES",
-    price: "$100",
-    image: "popularItems/img1.png",
-  },
+
 ];
 
 const PopulerItems = () => {
