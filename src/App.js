@@ -4,26 +4,39 @@ import { HomeContext } from "./context/Context";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Header from "./components/header/Header";
-
-
+import PopulerItems from "./components/content/PopulerItems";
 
 function App() {
   //Hamburger Menu State
   const [isOpen, setIsOpen] = useState(false);
+  //Add to cart icon State
+  const [increment, setIncrement] = useState(0);
+  const [favorite, setFavorite] = useState(0);
+  //Populer Items State
+  const [loadMore, setLoadMore] = useState(8);
 
   const state = {
     isOpen,
-    setIsOpen
+    setIsOpen,
+    increment,
+    setIncrement,
+    favorite,
+    setFavorite,
+    loadMore,
+    setLoadMore,
   };
   return (
     <HomeContext.Provider value={state}>
       <header className="w-full relative border-b-[1px]">
         <Header />
       </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="Services" element={<Services />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="Services" element={<Services />} />
+          <Route path="PopulerItems/:id" element={<PopulerItems />} />
+        </Routes>
+      </main>
     </HomeContext.Provider>
   );
 }

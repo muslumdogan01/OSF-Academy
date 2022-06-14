@@ -8,10 +8,14 @@ import Modal from "../Modal";
 const Header = () => {
 
   const {isOpen, setIsOpen} = useContext(HomeContext);
+  const {increment} = useContext(HomeContext);
+  const {favorite} = useContext(HomeContext);
+ 
 
   return (
-    <div className=" h-20 w-full container mx-auto md:flex md:items-center md:justify-between">
-      <div className="md:flex px-4 md:py-2 py-5">
+    <div className="container mx-auto">
+          <div className="h-20 w-full md:flex md:items-center md:justify-around">
+      <div className="md:flex md:py-2 py-5">
         <Logo />
       </div>
       <div className="flex md:justify-center">
@@ -67,24 +71,28 @@ const Header = () => {
           <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
           <Modal/>
           </li>
-          <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
+          <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer relative">
+          <span className="absolute top-[-11px] right-[-12px] rounded-xl w-5 h-5 text-center flex justify-center items-center  border-2 z-10 border-[#84bc22] text-[#84bc22]"> {favorite} </span>
             <img
               src="/heart.png"
               className="border-none"
               alt="Favorite"
             />
           </li>
-          <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
+          <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer relative">
+            <span className="absolute top-[-11px] right-[-12px] rounded-xl w-5 h-5 text-center flex justify-center items-center  border-2 z-10 border-[#84bc22] text-[#84bc22]"> {increment} </span>
             <img
               src="/shop.png"
               className="border-none"
               alt="Shopping"
             />
+            
           </li>
 
 
         </ul>
       </div>
+    </div>
     </div>
   );
 };

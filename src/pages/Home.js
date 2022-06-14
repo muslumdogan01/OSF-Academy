@@ -1,5 +1,5 @@
 import React from "react";
-import Content from "../components/Content";
+import Content from "../components/content/Content";
 import Slider from "../components/Slider";
 import SummerSales from "../components/SummerSales";
 
