@@ -16,7 +16,7 @@ const Slider = () => {
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Autoplay, A11y]}
-      spaceBetween={0}
+      spaceBetween={50}
       slidesPerView={1}
       pagination={{ clickable: true }}
       autoplay={{ delay: 3000, disableOnInteraction: false }}
@@ -24,7 +24,7 @@ const Slider = () => {
       onSlideChange={() => console.log()}
       loop={true}
       a11y={true}
-     
+      style={{ borderRadius: "10px", width: "1172px", height: "507px" }}
 
     >
       <SwiperSlide>
