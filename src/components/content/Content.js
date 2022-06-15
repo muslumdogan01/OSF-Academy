@@ -3,6 +3,7 @@ import BannerOsfTheme from "./BannerOsfTheme";
 import FeaturedProducts from "./FeaturedProducts";
 import FeaturedSlider from "./FeaturedSlider";
 import PopulerItems from "./PopulerItems";
+import TransportInformation from "./TransportInformation";
 
 const Content = () => {
   return (
@@ -25,9 +26,10 @@ const Content = () => {
       </div>
       <BannerOsfTheme />
       <FeaturedProducts />
-      <div className="container mx-auto">
+      <div className="mx-80 py-16 hidden md:flex">
         <FeaturedSlider />
       </div>
+      <TransportInformation />
     </>
   );
 };
