@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Header from "./components/header/Header";
 import PopulerItems from "./components/content/PopulerItems";
+import Footer from "./components/footer/Footer";
 
 function App() {
   //Hamburger Menu State
@@ -37,6 +38,9 @@ function App() {
           <Route path="PopulerItems/:id" element={<PopulerItems />} />
         </Routes>
       </main>
+      <footer>
+        <Footer/>
+      </footer>
     </HomeContext.Provider>
   );
 }

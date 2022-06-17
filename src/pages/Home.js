@@ -34,6 +34,7 @@ const Home = () => {
       <div className="w-full flex flex-col bg-[#262a32]">
         <Content />
       </div>
+      
     </>
   );
 };

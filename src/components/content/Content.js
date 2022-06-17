@@ -26,7 +26,7 @@ const Content = () => {
       </div>
       <BannerOsfTheme />
       <FeaturedProducts />
-      <div className="mx-80 py-16 hidden md:flex">
+      <div className="container mx-auto py-16 hidden md:flex">
         <FeaturedSlider />
       </div>
       <TransportInformation />
