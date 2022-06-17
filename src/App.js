@@ -6,6 +6,7 @@ import Services from "./pages/Services";
 import Header from "./components/header/Header";
 import PopulerItems from "./components/content/PopulerItems";
 import Footer from "./components/footer/Footer";
+import ErorPage from "./components/ErorPage";
 
 function App() {
   //Hamburger Menu State
@@ -35,6 +36,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="Services" element={<Services />} />
+          <Route path="ErorPage" element={<ErorPage/>} />
           <Route path="PopulerItems/:id" element={<PopulerItems />} />
         </Routes>
       </main>

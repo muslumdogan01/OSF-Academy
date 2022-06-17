@@ -1,38 +1,73 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
     name: "Accessories",
-    href: "##",
+    href: "ErorPage",
   },
   {
     name: "Alcohol",
-    href: "##",
+    href: "ErorPage",
   },
   {
     name: "Art",
-    href: "##",
+    href: "ErorPage",
   },
   {
     name: "Books",
-    href: "##",
+    href: "ErorPage",
   },
   {
     name: "Drink",
-    href: "##",
+    href: "ErorPage",
   },
   {
     name: "Electronics",
-    href: "##",
+    href: "ErorPage",
   },
   {
     name: "Flowers & Plants",
-    href: "##",
+    href: "ErorPage",
   },
   {
     name: "Gadgets",
-    href: "##",
+    href: "ErorPage",
+  },
+];
+const categories2 = [
+  {
+    name: "Gadgets",
+    href: "ErorPage",
+  },
+  {
+    name: "Garden",
+    href: "ErorPage",
+  },
+  {
+    name: "Grocery",
+    href: "ErorPage",
+  },
+  {
+    name: "Home",
+    href: "ErorPage",
+  },
+  {
+    name: "Jewelry",
+    href: "ErorPage",
+  },
+  {
+    name: "Kids & Baby",
+    href: "ErorPage",
+  },
+  {
+    name: "Flowers & Plants",
+    href: "ErorPage",
+  },
+  {
+    name: "Mobile",
+    href: "ErorPage",
   },
 ];
 
@@ -47,7 +82,9 @@ export default function Example({ name }) {
                 group inline-flex items-center rounded-md  text-[14px] text-base  hover:text-opacity-100 focus:outline-none `}
           >
             <span className="flex items-center justify-between text-white md:text-header-text md:hover:text-white">
-              <span className="pr-2 dropSpan font-semibold  text-[14px]">{name}</span>
+              <span className="pr-2 dropSpan font-semibold navSpan text-[14px]">
+                {name}
+              </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-5 w-5"
@@ -85,7 +122,7 @@ export default function Example({ name }) {
                               <li className="py-3 pb-0 cursor-text">
                                 <a
                                   className="hover:text-[#84bc22] hover:underline"
-                                  href={item.href}
+                                  href="ErorPage"
                                 >
                                   {item.name}
                                 </a>
@@ -96,7 +133,7 @@ export default function Example({ name }) {
                       </div>
                       <div class="basis-1/2">
                         <ul className="mt-8">
-                          {categories.map((item, index) => {
+                          {categories2.map((item, index) => {
                             return (
                               <li key={index} className="py-3 pb-0 cursor-text">
                                 <a
@@ -144,7 +181,7 @@ export default function Example({ name }) {
                         </ul>
                       </div>
                       <div class="basis-1/2 ">
-                        <img className="rounded-lg mt-5" src="/navPhoto.png"/>
+                        <img className="rounded-lg mt-5" src="/navPhoto.png" />
                       </div>
                     </div>
                   </div>

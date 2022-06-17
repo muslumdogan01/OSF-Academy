@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.navHover:hover .navSpan{
+    color: white;
+}
+.navHover:hover svg{
+    color: white;
+}
+
 .dropList:hover{
     background-color: #262a32 !important;
 }

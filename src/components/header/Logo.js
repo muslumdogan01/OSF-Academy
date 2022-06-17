@@ -4,7 +4,6 @@ import { Icon } from "../../Icons/Icon";
 import { HomeContext, useContext } from "../../context/Context";
 
 const Logo = () => {
-
   const { isOpen, setIsOpen } = useContext(HomeContext);
 
   return (
@@ -16,13 +15,15 @@ const Logo = () => {
           }}
           className="cursor-pointer absolute left-0 md:hidden"
         >
-          <Icon name={isOpen? 'menuClose':'menu'} size={24} />
+          <Icon name={isOpen ? "menuClose" : "menu"} size={24} />
         </div>
-        <img
-          src="/osfLogo.png"
-          className="border-none md:flex hidden"
-          alt="OSF Academy"
-        />
+        <Link to="/">
+          <img
+            src="/osfLogo.png"
+            className="border-none md:flex hidden"
+            alt="OSF Academy"
+          />
+        </Link>
         <img src="/logoMb.png" className="flex md:hidden "></img>
       </div>
     </div>

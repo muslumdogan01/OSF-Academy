@@ -4,6 +4,7 @@ import Dropdown from "./Dropdown";
 import Logo from "./Logo";
 import { HomeContext, useContext } from "../../context/Context";
 import Modal from "../Modal";
+import { Link } from "react-router-dom";
 
 const Header = () => {
 
@@ -18,15 +19,15 @@ const Header = () => {
       <div className="md:flex md:py-2 py-5">
         <Logo />
       </div>
-      <div className="flex md:justify-center">
-        <ul className={`md:flex md:items-center justify-center transition-all duration-500 ease-in z-10 md:bg-white bg-[#262a32] w-full
+      <div className="flex md:justify-center hover:text-white navHover">
+        <ul className={`md:flex md:items-center justify-center transition-all duration-500 ease-in z-10 md:bg-white bg-[#262a32] w-full hover:text-white
           ${isOpen ? 'top-20 opacity-100':'top-[-40] hidden '}  md:opacity-100 opacity-0
         `}>
           <li className="mx-4 my-6 md:my-0 md:hover:border-b-[3px]  font-semibold hover:border-[#84bc22]  text-[14px] p-3  hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
             <Dropdown name="SERVICES"/>
           </li>
           <li className="mx-4 my-6 md:my-0 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] text-[14px] p-3  hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
-          COMPANY
+          <Link to="ErorPage">COMPANY</Link>
           </li>
           <li className="mx-4 my-6 md:hover:border-b-[3px] font-semibold hover:border-[#84bc22] md:my-0  text-[14px] p-3 hover:bg-[#262a32] text-white md:text-header-text md:hover:text-white cursor-pointer">
           LIBRARY
