@@ -9,6 +9,10 @@
     color: white;
 }
 
+#green{
+    color: #00ff00 !important;
+}
+
 .dropList:hover{
     background-color: #262a32 !important;
 }

@@ -7,6 +7,7 @@ import Header from "./components/header/Header";
 import PopulerItems from "./components/content/PopulerItems";
 import Footer from "./components/footer/Footer";
 import ErorPage from "./components/ErorPage";
+import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
   //Hamburger Menu State
@@ -16,6 +17,19 @@ function App() {
   const [favorite, setFavorite] = useState(0);
   //Populer Items State
   const [loadMore, setLoadMore] = useState(8);
+  //Shopping Cart State
+  const [shoppingCart, setShoppingCart] = useState([
+    {
+      id: 1,
+      name: "Kristina Dam Oak Table With White Marble Top",
+      price: Number(2.99),
+    },
+    {
+      id: 2,
+      name: "Activate Facial Mask and Charcoal Soap",
+      price: Number(3.99),
+    }
+  ]);
 
   const state = {
     isOpen,
@@ -26,6 +40,8 @@ function App() {
     setFavorite,
     loadMore,
     setLoadMore,
+    shoppingCart,
+    setShoppingCart,
   };
   return (
     <HomeContext.Provider value={state}>
@@ -37,6 +53,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="Services" element={<Services />} />
           <Route path="ErorPage" element={<ErorPage/>} />
+          <Route path="ShoppingCart" element={<ShoppingCart/>} />
           <Route path="PopulerItems/:id" element={<PopulerItems />} />
         </Routes>
       </main>

@@ -8,6 +8,7 @@ module.exports = {
         "header-text": "#45413e",
         "osf-logo-color":"#011847",
         "academy-logo-color":"#84bc22",
+        "green": "#84bc22",
       },
     },
   },

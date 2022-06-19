@@ -4,7 +4,7 @@ import { Icon } from "../../Icons/Icon";
 const Footer = () => {
   return (
     <div className="w-full bg-white">
-      <div className="container mx-auto  flex py-10">
+      <div className="container mx-auto  flex flex-col md:flex-row py-10">
         <div className="basis-1/2 text-[#45413e]">
           <p>
             © Copyright 2022. <br /> All Rightts Reserved.
@@ -27,7 +27,7 @@ const Footer = () => {
             <li>Electronics</li>
           </ul>
         </div>
-        <div className="basis-1/2 flex flex-col items-center">
+        <div className="basis-1/2 flex md:flex-col items-center">
           <ul className="text-[#45413e] pt-12">
             <li className="pb-5">Home</li>
             <li className="pb-5">Jewelry</li>
