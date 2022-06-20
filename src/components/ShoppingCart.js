@@ -5,17 +5,18 @@ import { HomeContext, useContext } from "../context/Context";
 const ShoppingCart = () => {
   const { shoppingCart, setShoppingCart } = useContext(HomeContext);
   const [count, setCount] = useState(0);
+  const [countDecrese, setCountDecrese] = useState(0);
   const [increment, setIncrement] = useState(Number(2.99));
 
   const decreasePrice = (item) => {
-    setCount(count - 1);
-    setIncrement(count - 1);
+   item.count = item.count - 1;
+   setIncrement(item.count - Number(2.99));
     item.price = item.price - Number(2.99);
   };
   const incrementPrice = (item) => {
-    setCount(count + 1);
-    setIncrement(count + 1);
-    item.price = item.price + Number(2.99);
+    item.count = item.count + 1;
+    setIncrement(item.count + Number(2.99));
+     item.price = item.price + Number(2.99);
   };
 
     const removeItem = (item) => {
@@ -64,7 +65,7 @@ const ShoppingCart = () => {
                         >
                           -
                         </span>
-                        <span className="px-5 text-2xl text-[#45413e]">0</span>
+                        <span className="px-5 text-2xl text-[#45413e]">{item.count}</span>
                         <span
                           onClick={() => {
                             incrementPrice(item);

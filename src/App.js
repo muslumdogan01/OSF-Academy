@@ -23,11 +23,13 @@ function App() {
       id: 1,
       name: "Kristina Dam Oak Table With White Marble Top",
       price: Number(2.99),
+      count:0,
     },
     {
       id: 2,
       name: "Activate Facial Mask and Charcoal Soap",
       price: Number(3.99),
+      count:0,
     }
   ]);
 
