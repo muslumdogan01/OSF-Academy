@@ -22,14 +22,20 @@ function App() {
     {
       id: 1,
       name: "Kristina Dam Oak Table With White Marble Top",
-      price: Number(2.99),
+      price: Number(245),
       count:0,
+      orderTotal: Number(1.447.toFixed(3)),
+      flatRate: Number(10.00),
+      international: Number(60.00),
+      delivery: Number(5.10),
     },
     {
       id: 2,
       name: "Activate Facial Mask and Charcoal Soap",
-      price: Number(3.99),
+      price: Number(398),
       count:0,
+      orderTotal: Number(1.447.toFixed(3)),
+     
     }
   ]);
 

@@ -42,6 +42,33 @@
 }
 
 
+.colorOne{
+   background-color: #fff !important;
+}
+.colorTwo{
+   background-color: #43c0cf !important;
+}
+.colorThere{
+   background-color: #3d402f !important;
+}
+.colorFour{
+   background-color: #4aaf00 !important;
+}
+.colorFive{
+   background-color: #315bbd !important;
+}
+.colorSix{
+   background-color: #ec6115 !important;
+}
+.colorSeven{
+   background-color: #dc041d !important;
+}
+.colorEight{
+   background-color: #efead7 !important;
+}
+
+
+
 @media screen and (max-width: 600px) {
     .swiper {
  

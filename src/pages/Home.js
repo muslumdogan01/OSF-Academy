@@ -2,6 +2,7 @@ import React from "react";
 import Content from "../components/content/Content";
 import Slider from "../components/Slider";
 import SummerSales from "../components/SummerSales";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -25,7 +26,7 @@ const Home = () => {
                 Sed ut perspiciatis unde omnis iste <br /> natus error sit
               </p>
               <button class="transition ease-in-out delay-150 bg-transparent border rounded-2xl px-7 py-1 hover:-translate-y-1 hover:scale-110  duration-300 ...">
-                VIEW MORE
+              <Link to="/Services">VIEW MORE </Link>
               </button>
             </div>
           </div>

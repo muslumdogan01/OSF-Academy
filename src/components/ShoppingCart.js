@@ -4,24 +4,28 @@ import { HomeContext, useContext } from "../context/Context";
 
 const ShoppingCart = () => {
   const { shoppingCart, setShoppingCart } = useContext(HomeContext);
-  const [count, setCount] = useState(0);
-  const [countDecrese, setCountDecrese] = useState(0);
-  const [increment, setIncrement] = useState(Number(2.99));
+  const [shipping, setShipping] = useState(10);
+  const [increment, setIncrement] = useState(Number((2.548).toFixed(3)));
 
-  const decreasePrice = (item) => {
-   item.count = item.count - 1;
-   setIncrement(item.count - Number(2.99));
-    item.price = item.price - Number(2.99);
-  };
   const incrementPrice = (item) => {
     item.count = item.count + 1;
-    setIncrement(item.count + Number(2.99));
-     item.price = item.price + Number(2.99);
+    setIncrement(item.count);
+    item.orderTotal = item.price * item.count.toFixed(3);
   };
 
-    const removeItem = (item) => {
-        setShoppingCart(shoppingCart.filter(cartItem => cartItem.id !== item.id));
-    }
+  const decreasePrice = (item) => {
+    item.count = item.count - 1;
+    setIncrement(item.count);
+    // item.price = item.price - Number((2.548).toFixed(3));
+    item.orderTotal = item.price * item.count;
+  };
+
+  const removeItem = (item) => {
+    setShoppingCart(shoppingCart.filter((cartItem) => cartItem.id !== item.id));
+  };
+
+
+
 
   return (
     <div className="bg-[#f1edea]">
@@ -65,7 +69,9 @@ const ShoppingCart = () => {
                         >
                           -
                         </span>
-                        <span className="px-5 text-2xl text-[#45413e]">{item.count}</span>
+                        <span className="px-5 text-2xl text-[#45413e]">
+                          {item.count}
+                        </span>
                         <span
                           onClick={() => {
                             incrementPrice(item);
@@ -76,10 +82,15 @@ const ShoppingCart = () => {
                         </span>
                       </div>
                       <span className="text-[#45413e] text-3xl font-bold">
-                        ${item.price}
+                        ${item.orderTotal}
                       </span>
                       <div className="hover:bg-[#e8e2d6] hover:text-white transition-all duration-500 ease-in-out rounded-full border-2 flex items-center justify-center px-3 pb-2 cursor-pointer border-[#e8e2d6] ">
-                        <span onClick={()=>{removeItem(item)}} className="text-center text-2xl font-bold text-[#a2a09e] ">
+                        <span
+                          onClick={() => {
+                            removeItem(item);
+                          }}
+                          className="text-center text-2xl font-bold text-[#a2a09e] "
+                        >
                           x
                         </span>
                       </div>
@@ -132,8 +143,11 @@ const ShoppingCart = () => {
                         <div>
                           <label class="inline-flex items-center">
                             <input
+                              id="default-radio-1"
                               type="radio"
-                              className="form-radio text-green-500"
+                              value=""
+                              name="default-radio"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
                               Flat Rate:{" "}
@@ -144,8 +158,12 @@ const ShoppingCart = () => {
                         <div>
                           <label class="inline-flex items-center">
                             <input
+                              id="default-radio-1"
                               type="radio"
-                              className="form-radio text-green-500"
+                              value=""
+                              defaultChecked
+                              name="default-radio"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
                               Free Shipping
@@ -155,11 +173,14 @@ const ShoppingCart = () => {
                         <div>
                           <label class="inline-flex items-center">
                             <input
+                              id="default-radio-1"
                               type="radio"
-                              className="form-radio text-green-500"
+                              value=""
+                              name="default-radio"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
-                              International:{" "}
+                              International:
                               <span className="font-bold">$60.00</span>
                             </span>
                           </label>
@@ -167,8 +188,11 @@ const ShoppingCart = () => {
                         <div>
                           <label class="inline-flex items-center">
                             <input
+                              id="default-radio-1"
                               type="radio"
-                              className="form-radio text-green-500"
+                              value=""
+                              name="default-radio"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
                               Local Delivery:{" "}
@@ -179,9 +203,13 @@ const ShoppingCart = () => {
                         <div>
                           <label class="inline-flex items-center">
                             <input
+                              id="default-radio-1"
                               type="radio"
-                              className="form-radio text-green-500"
+                              value=""
+                              name="default-radio"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
+
                             <span class="ml-2 text-[#45413e] font-normal">
                               Local Pickup (Free)
                             </span>
@@ -198,7 +226,7 @@ const ShoppingCart = () => {
                     </div>
                     <div className="basis-1/2">
                       <span className="font-semibold text-[#45413e] text-5xl">
-                        $3,489
+                        $3.489
                       </span>
                     </div>
                   </div>

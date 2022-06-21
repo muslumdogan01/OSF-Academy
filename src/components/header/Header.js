@@ -42,7 +42,7 @@ const Header = () => {
                 <select
                   id="currency"
                   name="currency"
-                  className="focus:outline-none focus:ring-0 border-0 border-none cursor-pointer text-[#b1b0b0] h-full py-0 pr-1 border-0 border-none bg-transparent text-gray-500 sm:text-sm rounded-md"
+                  className="focus:outline-none focus:ring-0  cursor-pointer text-[#b1b0b0] h-full py-0 pr-1 border-0 border-none bg-transparent sm:text-sm rounded-md"
                 >
                   <option className="border-0 border-none text-[#b1b0b0]">
                     EN
@@ -62,7 +62,7 @@ const Header = () => {
                 <select
                   id="currency"
                   name="currency"
-                  className="focus:outline-none focus:ring-0 cursor-pointer text-[#b1b0b0] border-none h-full py-0 pr-1 border-0 border-none bg-transparent text-gray-500 sm:text-sm rounded-md"
+                  className="focus:outline-none focus:ring-0 cursor-pointer text-[#b1b0b0] border-none h-full py-0 pr-1 border-0  bg-transparent sm:text-sm rounded-md"
                 >
                   <option className="border-0 border-none">USD</option>
                   <option className="border-0 border-none">CAD</option>

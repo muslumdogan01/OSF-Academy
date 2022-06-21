@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, A11y } from "swiper";
+import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -48,9 +49,11 @@ const Slider = () => {
             Improve business performance and the user experience with <br /> the
             right mix of IoT technology and processes
           </p>
-          <button class=" rounded-xl text-sm px-2 text-[12px]  transition ease-in-out delay-150 bg-transparent border md:rounded-2xl md:px-7 md:py-1 hover:-translate-y-1 hover:scale-110  duration-300 ...">
-            VIEW MORE
+           
+            <button class=" rounded-xl text-sm px-2 text-[12px]  transition ease-in-out delay-150 bg-transparent border md:rounded-2xl md:px-7 md:py-1 hover:-translate-y-1 hover:scale-110  duration-300 ...">
+            <Link to="/Services">VIEW MORE </Link>
           </button>
+           
         </div>
       </div>
     </Swiper>
