@@ -8,6 +8,7 @@ import PopulerItems from "./components/content/PopulerItems";
 import Footer from "./components/footer/Footer";
 import ErorPage from "./components/ErorPage";
 import ShoppingCart from "./components/ShoppingCart";
+import Product from "./components/product/Product";
 
 function App() {
   //Hamburger Menu State
@@ -62,6 +63,7 @@ function App() {
           <Route path="Services" element={<Services />} />
           <Route path="ErorPage" element={<ErorPage/>} />
           <Route path="ShoppingCart" element={<ShoppingCart/>} />
+          <Route path="Product" element={<Product/>}/>
           <Route path="PopulerItems/:id" element={<PopulerItems />} />
         </Routes>
       </main>
