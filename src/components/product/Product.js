@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import TransportInformation from "../content/TransportInformation";
 import Description from "./Description";
 import ProductDetail from "./ProductDetail";
+import ProductItems from "./ProductItems";
 
 const Product = () => {
   return (
@@ -28,16 +30,18 @@ const Product = () => {
           <div className="basis-1/4 border-b-2 border-[#e5e2df]"></div>
         </div>
         <div className="container px-28 pb-10">
-          <div>
+          <div className="w-full">
             <div class="bg-white  rounded-t-lg py-5 pb-16 mt-4 flex">
               <ProductDetail />
             </div>
             <div className="bg-white w-full ">
               <Description />
             </div>
+            <ProductItems />
           </div>
         </div>
       </div>
+      <TransportInformation />
     </div>
   );
 };

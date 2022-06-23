@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HomeContext, useContext } from "../../context/Context";
 import { Icon } from "../../Icons/Icon";
 import ColorButton from "./ColorButton";
-import Description from "./Description";
+import ImageZoom from "./ImageZoom";
 
 const images = [
   {
@@ -23,14 +23,13 @@ const images = [
   },
 ];
 
-const readMoreItem = [
-    
-]
+
 
 const ProductDetail = () => {
     const { increment, setIncrement } = useContext(HomeContext);
   const [selectedImg, setSelectedImg] = useState(images[0].photo);
   const [incrementButton, setIncrementButton] = useState(0);
+  const [readMoreItem, setReadMoreItem] = useState(false)
 
   const addToCart = ()=>{
     setIncrement(increment + 1)
@@ -43,9 +42,16 @@ const ProductDetail = () => {
     setIncrementButton(incrementButton - 1);
   };
 
+  const showReadMore = ()=>{
+    setReadMoreItem(readMoreItem + readMoreItem)
+  }
+
   return (
     <div className="flex flex-row w-full">
-      <div className="basis-1/2 px-5 ">
+      <div className="basis-1/2 px-5 relative">
+        <div className="absolute top-5 left-10">
+            <ImageZoom selectedImg={selectedImg}/>
+        </div>
         <img
           style={{ width: "100%", height: "auto" }}
           src={selectedImg}
@@ -115,7 +121,7 @@ const ProductDetail = () => {
                 quae ab illo inventore Beatae vitae dicta sunt explicabo. Nemo
                 enim ipsam voluptatem quia voluptas
               </p>
-                <p className="text-[#84bc22] py-5">Read more</p>
+                <p onClick={showReadMore} className="text-[#84bc22] py-5">Read more</p>
             </div>
             <div className="flex pt-7">
                 <span className="text-[#b2b2b2] text-sm">Share</span>
