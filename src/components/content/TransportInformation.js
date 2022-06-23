@@ -4,8 +4,8 @@ import { Icon } from "../../Icons/Icon";
 const TransportInformation = () => {
   return (
     <div className=" flex-col justify-center py-16 bg-[#45413e] hidden md:flex">
-      <div className="flex text-[14px] container mx-auto">
-        <div className="basis-1/2 flex ">
+      <div className="flex text-[14px] w-full">
+        <div className="basis-1/2 flex  justify-center">
           <span className="fill-[#84bc22]">
             <Icon name="dolly" size={70} />
           </span>
@@ -18,7 +18,7 @@ const TransportInformation = () => {
             </h1>
           </div>
         </div>
-        <div className="basis-1/2 flex">
+        <div className="basis-1/2 flex justify-center">
           <span className="fill-[#84bc22]">
             <Icon name="metodology" size={70} />
           </span>
@@ -31,7 +31,7 @@ const TransportInformation = () => {
             </h1>
           </div>
         </div>
-        <div className="basis-1/2 flex">
+        <div className="basis-1/2 flex justify-center">
           <span className="fill-[#84bc22]">
             <Icon name="dolly" size={70} />
           </span>

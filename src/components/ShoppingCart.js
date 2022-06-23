@@ -100,7 +100,7 @@ const ShoppingCart = () => {
               );
             })}
 
-            <div className="w-full border-b-2 border-red-500 pt-24"></div>
+            <div className="w-full border-b-2 border-[#e8e2d6] pt-24"></div>
             <div className="basis-1/2  pt-16">
               <div className="flex">
                 <div className="basis-1/2">
@@ -225,9 +225,13 @@ const ShoppingCart = () => {
                       </span>
                     </div>
                     <div className="basis-1/2">
-                      <span className="font-semibold text-[#45413e] text-5xl">
-                        $3.489
+                    {shoppingCart.map((price)=>{
+                      return(
+                        <span className="font-semibold text-[#45413e] text-5xl">
+                        {price.id === 1 ? "$"+price.orderTotal:""}
                       </span>
+                      )
+                    })}
                     </div>
                   </div>
                 </div>

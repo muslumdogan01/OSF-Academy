@@ -42,7 +42,7 @@ const Header = () => {
                 <select
                   id="currency"
                   name="currency"
-                  className="focus:outline-none focus:ring-0  cursor-pointer text-[#b1b0b0] h-full py-0 pr-1 border-0 border-none bg-transparent sm:text-sm rounded-md"
+                  className="focus:outline-none focus:ring-0 w-12 cursor-pointer text-[#b1b0b0] h-full py-0 pr-1 border-0 border-none bg-transparent sm:text-sm rounded-md"
                 >
                   <option className="border-0 border-none text-[#b1b0b0]">
                     EN
@@ -56,13 +56,13 @@ const Header = () => {
                 </select>
               </div>
             </li>
-            <li className="mx-4 my-6 md:my-0 text-header-text text-[14px] md:flex hidden  cursor-pointer">
-              <div className="flex items-center">
+            <li className="my-6 md:my-0 text-header-text text-[14px] md:flex hidden  cursor-pointer">
+              <div className="flex items-center ">
                 <span className="cursor-pointer text-[#b1b0b0]">$</span>
                 <select
                   id="currency"
                   name="currency"
-                  className="focus:outline-none focus:ring-0 cursor-pointer text-[#b1b0b0] border-none h-full py-0 pr-1 border-0  bg-transparent sm:text-sm rounded-md"
+                  className="focus:outline-none focus:ring-0 cursor-pointer  text-[#b1b0b0] border-none w-14 py-0 pr-1 border-0  bg-transparent sm:text-sm rounded-md"
                 >
                   <option className="border-0 border-none">USD</option>
                   <option className="border-0 border-none">CAD</option>

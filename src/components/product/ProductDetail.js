@@ -23,17 +23,30 @@ const images = [
   },
 ];
 
-
+const items = [
+  {
+    id: 1,
+    name: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas",
+  },
+  {
+    id: 2,
+    name: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium Hay - About A Lounge Chair AAL 93",
+    priceTwo: "$100",
+    image: "popularItems/img2.png",
+    buy: "BUY NOW",
+  },
+];
 
 const ProductDetail = () => {
-    const { increment, setIncrement } = useContext(HomeContext);
+  const { increment, setIncrement } = useContext(HomeContext);
   const [selectedImg, setSelectedImg] = useState(images[0].photo);
   const [incrementButton, setIncrementButton] = useState(0);
-  const [readMoreItem, setReadMoreItem] = useState(false)
+  const [readMore, setReadMore] = useState(1);
+  const slice = items.slice(0, readMore);
 
-  const addToCart = ()=>{
-    setIncrement(increment + 1)
-  }
+  const addToCart = () => {
+    setIncrement(increment + 1);
+  };
 
   const increase = () => {
     setIncrementButton(incrementButton + 1);
@@ -42,15 +55,15 @@ const ProductDetail = () => {
     setIncrementButton(incrementButton - 1);
   };
 
-  const showReadMore = ()=>{
-    setReadMoreItem(readMoreItem + readMoreItem)
-  }
+  const loadMoreClick = () => {
+    setReadMore(readMore + readMore);
+  };
 
   return (
     <div className="flex flex-row w-full">
       <div className="basis-1/2 px-5 relative">
         <div className="absolute top-5 left-10">
-            <ImageZoom selectedImg={selectedImg}/>
+          <ImageZoom selectedImg={selectedImg} />
         </div>
         <img
           style={{ width: "100%", height: "auto" }}
@@ -98,7 +111,9 @@ const ProductDetail = () => {
               >
                 -
               </span>
-              <span className="px-5 text-2xl text-[#45413e]">{incrementButton}</span>
+              <span className="px-5 text-2xl text-[#45413e]">
+                {incrementButton}
+              </span>
               <span
                 onClick={() => {
                   increase();
@@ -109,37 +124,57 @@ const ProductDetail = () => {
               </span>
             </div>
             <div className="flex px-5">
-              <button onClick={addToCart} className="border-2 border-[#84bc22] text-white bg-[#84bc22] px-4 py-1 rounded-full  ">
+              <button
+                onClick={addToCart}
+                className="border-2 border-[#84bc22] text-white hover:bg-white hover:text-[#84bc22] transition-all duration-500 ease-in-out font-normal bg-[#84bc22] px-4 py-1 rounded-full  "
+              >
                 ADD TO CART
               </button>
             </div>
           </div>
           <div className="flex pt-14 pr-20 flex-col">
-              <p className="text-[#45413e] text-base">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore Beatae vitae dicta sunt explicabo. Nemo
-                enim ipsam voluptatem quia voluptas
-              </p>
-                <p onClick={showReadMore} className="text-[#84bc22] py-5">Read more</p>
-            </div>
-            <div className="flex pt-7">
-                <span className="text-[#b2b2b2] text-sm">Share</span>
-                <span className="fill-[#b2b2b2] text-sm px-7">
-                    <Icon name="facebook" size={24}/>
-                </span>
-                <span className="fill-[#b2b2b2] text-sm">
-                    <Icon name="googlePlus" size={24}/>
-                </span>
-                <span className="fill-[#b2b2b2] text-sm px-7">
-                    <Icon name="twitter" size={24}/>
-                </span>
-                <span className="fill-[#b2b2b2] text-sm">
-                    <Icon name="pinterest" size={24}/>
-                </span>
+            {slice.map((more) => {
+              return <p className="text-[#45413e] text-base">{more.name}</p>;
+            })}
+            <p
+              onClick={() => loadMoreClick()}
+              className="text-[#84bc22] py-5 cursor-pointer"
+            >
+              Read more
+            </p>
+          </div>
+          <div className="flex pt-7">
+            <span className="text-[#b2b2b2] text-sm">Share</span>
+            <a
+              href="https://www.facebook.com/"
+              className="fill-[#b2b2b2] text-sm px-7"
+              target="_blank"
+            >
+              <Icon name="facebook" size={24} />
+            </a>
 
-            </div>
-      
+            <a
+              className="fill-[#b2b2b2] text-sm"
+              target="_blank"
+              href="https://www.google.com/intl/tr/gmail/about/"
+            >
+              <Icon name="googlePlus" size={24} />
+            </a>
+            <a
+              className="fill-[#b2b2b2] text-sm px-7"
+              target="_blank"
+              href="https://twitter.com/"
+            >
+              <Icon name="twitter" size={24} />
+            </a>
+            <a
+              className="fill-[#b2b2b2] text-sm"
+              href="https://tr.pinterest.com/"
+              target="_blank"
+            >
+              <Icon name="pinterest" size={24} />
+            </a>
+          </div>
         </div>
       </div>
     </div>

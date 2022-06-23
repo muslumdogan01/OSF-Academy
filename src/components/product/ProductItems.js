@@ -65,8 +65,8 @@ const ProductItems = () => {
                   className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                 />
               </div>
-              <div className="mt-4 flex justify-between">
-                <div>
+              <div className="py-5 flex justify-center items-center">
+                <div className="flex flex-col">
                   <h3 className="text-[#2c3e50] text-center px-5">
                     <span
                       aria-hidden="true"
@@ -74,7 +74,7 @@ const ProductItems = () => {
                     />
                     {product.name}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500 text-center pt-5">  {product.price}</p>
+                  <p className=" text-sm text-gray-500 text-center pt-4">  {product.price}</p>
                 </div>
               </div>
             </div>

@@ -79,9 +79,9 @@ const Modal = () => {
                       <label class="block">
                         <div className="flex items-center justify-between">
                         <span class="block text-sm font-medium  text-[#45413e]">
-                          Lato
+                        Password
                         </span>
-                        <span class="block text-sm font-medium  text-[#84bc22]">
+                        <span class="block text-sm font-medium cursor-pointer text-[#84bc22]">
                           Forgot password
                         </span>
                         </div>
@@ -106,7 +106,7 @@ const Modal = () => {
                     >
                      Login
                     </button>
-                    <p className="pt-5 text-[#84bc22]">I don't have an account</p>
+                    <p className="pt-5 text-[#84bc22] cursor-pointer ">I don't have an account</p>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

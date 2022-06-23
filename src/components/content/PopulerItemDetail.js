@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { HomeContext } from "../../context/Context";
 import { Icon } from "../../Icons/Icon";
 
 const PopulerItemDetail = ({ item }) => {
   const { increment, setIncrement } = useContext(HomeContext);
-  const {favorite, setFavorite} = useContext(HomeContext);
+  const { favorite, setFavorite } = useContext(HomeContext);
   const [style, setStyle] = useState({ display: "none" });
 
   const incrementItem = () => {
@@ -12,7 +13,7 @@ const PopulerItemDetail = ({ item }) => {
   };
   const favoriteItem = () => {
     setFavorite(favorite + 1);
-  }
+  };
 
   return (
     <div
@@ -27,17 +28,29 @@ const PopulerItemDetail = ({ item }) => {
         <div className="absolute left-0 top-0 flex items-center justify-evenly hover:bg-[#34c97c] opacity-90 rounded-lg  w-full h-[22.813rem] z-10">
           <div style={style}>
             <div className="flex justify-evenly items-center w-[16.875rem] h-[22.813rem]">
-              <span onClick={()=>{incrementItem()}} className="bg-white   hover:bg-[#e6e6e6] h-20 w-20 rounded-full flex justify-center items-center">
+              <span
+                onClick={() => {
+                  incrementItem();
+                }}
+                className="bg-white   hover:bg-[#e6e6e6] h-20 w-20 rounded-full flex justify-center items-center"
+              >
                 <Icon name="plus" size={30} />
               </span>
-              <span onClick={()=>{favoriteItem()}} className="bg-white h-20 w-20 hover:bg-[#e6e6e6]   rounded-full flex  justify-center items-center">
+              <span
+                onClick={() => {
+                  favoriteItem();
+                }}
+                className="bg-white h-20 w-20 hover:bg-[#e6e6e6]   rounded-full flex  justify-center items-center"
+              >
                 <Icon name="heart" size={30} />
               </span>
             </div>
           </div>
         </div>
       )}
+
       <img src={item.image} alt="" className="rounded-t-lg " />
+
       <div className="flex flex-col  items-center pt-5  text-[16px] font-semibold px-4">
         <div className="flex flex-col">
           <span className="text-center"> {item.name} </span>
@@ -65,7 +78,7 @@ const PopulerItemDetail = ({ item }) => {
                 onClick={() => incrementItem()}
                 className="text-black hover:bg-[#24c36c] hover:text-white transition duration-150 ease-out  basis-1/2 py-2 rounded-r-2xl"
               >
-                {item.buy}
+                <Link to="Product">{item.buy}</Link>
               </button>
             ) : null}
           </div>
