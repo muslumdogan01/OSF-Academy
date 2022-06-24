@@ -23,77 +23,89 @@ const FeaturedSlider = () => {
       navigation
       loop={true}
       a11y={true}
-      style={{ width: "100%", height: "100%" }}
+      style={{ width: "1200px" }}
     >
       <SwiperSlide>
-        <div className="w-72 h-[22rem] border-none bg-white rounded-xl text-center">
-          <img
-            src="featuredImages/img1.png"
-            style={{
-              borderTopLeftRadius: "12px",
-              borderTopRightRadius: "12px",
-            }}
-            alt=""
-          />
-          <div className="flex flex-col items-center">
-            <span className="pt-5">
-              Kristina Dam Oak Table <br /> With White Marble
-            </span>
-            <p className="pt-5 text-[#84bc22]">Awesome</p>
+        <div className="group relative bg-white rounded-t-md">
+          <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-t-md  overflow-hidden group-hover:opacity-75 lg:aspect-none">
+            <img src="featuredImages/img1.png" alt="" />
+          </div>
+          <div className="py-5 flex justify-center items-center">
+            <div className="flex flex-col">
+              <h3 className="text-[#45413e] text-center px-5">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 text-[#45413e] text-base "
+                />
+                Kristina Dam Oak Table With White Marble
+              </h3>
+              <p className=" text-sm text-[#84bc22] text-center pt-4">
+                Awesome
+              </p>
+            </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-72 h-[22rem] border-none bg-white rounded-xl">
-          <img
-            src="featuredImages/img2.png"
-            style={{
-              borderTopLeftRadius: "12px",
-              borderTopRightRadius: "12px",
-            }}
-            alt=""
-          />
-          <div className="flex flex-col items-center">
-            <span className="pt-5">
-              Kristina Dam Oak Table <br /> With White Marble
-            </span>
-            <p className="pt-5 text-[#84bc22]">Marketing</p>
+        <div className="group relative bg-white rounded-t-md">
+          <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-t-md overflow-hidden group-hover:opacity-75  lg:aspect-none">
+            <img src="featuredImages/img2.png" alt="" />
+          </div>
+          <div className="py-5 flex justify-center items-center">
+            <div className="flex flex-col">
+              <h3 className="text-[#45413e] text-center px-5">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 text-[#45413e] text-base "
+                />
+                Kristina Dam Oak Table With White Marble
+              </h3>
+              <p className=" text-sm text-[#84bc22] text-center pt-4">
+                Marketing
+              </p>
+            </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-72  h-[22rem]  border-none bg-white rounded-xl">
-          <img
-            src="featuredImages/img3.png"
-            style={{
-              borderTopLeftRadius: "12px",
-              borderTopRightRadius: "12px",
-            }}
-            alt=""
-          />
-          <div className="flex flex-col items-center">
-            <span className="pt-5">
-              Kristina Dam Oak Table <br /> With White Marble
-            </span>
-            <p className="pt-5 text-[#84bc22]">Awesome</p>
+        <div className="group relative bg-white rounded-t-md">
+          <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-t-md overflow-hidden group-hover:opacity-75  lg:aspect-none">
+            <img src="featuredImages/img3.png" alt="" />
+          </div>
+          <div className="py-5 flex justify-center items-center">
+            <div className="flex flex-col">
+              <h3 className="text-[#45413e] text-center px-5">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 text-[#45413e] text-base "
+                />
+                Kristina Dam Oak Table With White Marble
+              </h3>
+              <p className=" text-sm text-[#84bc22] text-center pt-4">
+                Awesome
+              </p>
+            </div>
           </div>
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-72 h-[22rem]  border-none bg-white rounded-xl">
-          <img
-            src="featuredImages/img4.png"
-            style={{
-              borderTopLeftRadius: "12px",
-              borderTopRightRadius: "12px",
-            }}
-            alt=""
-          />
-          <div className="flex flex-col items-center">
-            <span className="pt-5">
-            Kristina Dam Oak Table <br /> With White Marble
-            </span>
-            <p className="pt-5 text-[#84bc22]">Marketing</p>
+        <div className="group relative bg-white rounded-md">
+          <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-t-md overflow-hidden group-hover:opacity-75 lg:aspect-none">
+            <img src="featuredImages/img4.png" alt="" />
+          </div>
+          <div className="py-5 flex justify-center items-center">
+            <div className="flex flex-col">
+              <h3 className="text-[#45413e] text-center px-5">
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 text-[#45413e] text-base "
+                />
+                Kristina Dam Oak Table With White Marble
+              </h3>
+              <p className=" text-sm text-[#84bc22] text-center pt-4">
+                Marketing
+              </p>
+            </div>
           </div>
         </div>
       </SwiperSlide>

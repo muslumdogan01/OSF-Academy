@@ -8,8 +8,8 @@ import TransportInformation from "./TransportInformation";
 const Content = () => {
   return (
     <>
-      <div className="container mx-auto md:pt-20  pt-10 ">
-        <div class="flex flex-row px-8 justify-center pb-10">
+      <div className="container mx-auto md:pt-20 hidden md:flex md:flex-col pt-10 ">
+        <div class="flex flex-row px-28 justify-center items-center pb-10">
           <div class="basis-1/2 flex flex-col justify-center">
             <div className="border-[#3c4047] border border-b-1"></div>
           </div>

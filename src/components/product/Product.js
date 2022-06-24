@@ -31,7 +31,7 @@ const Product = () => {
         </div>
         <div className="container px-28 pb-10">
           <div className="w-full">
-            <div class="bg-white  rounded-t-lg py-5 pb-16 mt-4 flex">
+            <div class="bg-white rounded-t-lg py-5 pb-16 mt-4 flex">
               <ProductDetail />
             </div>
             <div className="bg-white w-full ">

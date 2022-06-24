@@ -13,7 +13,7 @@ const Logo = () => {
           onClick={() => {
             setIsOpen(!isOpen);
           }}
-          className="cursor-pointer absolute left-0 md:hidden"
+          className="cursor-pointer absolute left-4 md:hidden"
         >
           <Icon name={isOpen ? "menuClose" : "menu"} size={24} />
         </div>
@@ -24,7 +24,9 @@ const Logo = () => {
             alt="OSF Academy"
           />
         </Link>
-        <img src="/logoMb.png" className="flex md:hidden "></img>
+        <Link to="/">
+          <img src="/logoMb.png" className="flex md:hidden "></img>
+        </Link>
       </div>
     </div>
   );

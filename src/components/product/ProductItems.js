@@ -41,7 +41,7 @@ const products = [
 const ProductItems = () => {
   return (
     <div className="w-full">
-      <div className="max-w-2xl py-10 px-4 sm:py-16 sm:px-6 lg:max-w-full ">
+      <div className="max-w-2xl py-10 sm:py-16  lg:max-w-full ">
         <div class="flex flex-row justify-center pb-5">
           <div class="basis-1/2 flex flex-col justify-center">
             <div className="border-[#e5e2df] border border-b-1"></div>
