@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <div className=" container mx-auto md:flex md:flex-col">
-        <div className="flex flex-col md:flex-row w-full mb-7 mt-4 md:mt-6 md:justify-center md:items-center">
+        <div className="flex flex-col md:flex-row w-full  mt-4 md:mt-6 md:justify-center md:items-center">
           <div className="flex md:pr-5">
             <Slider />
           </div>

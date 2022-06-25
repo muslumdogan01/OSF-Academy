@@ -18,6 +18,8 @@ function App() {
   const [favorite, setFavorite] = useState(0);
   //Populer Items State
   const [loadMore, setLoadMore] = useState(8);
+  //Services Items State
+  const [servicesItems, setServicesItems]=useState(8)
   //Shopping Cart State
   const [shoppingCart, setShoppingCart] = useState([
     {
@@ -51,6 +53,8 @@ function App() {
     setLoadMore,
     shoppingCart,
     setShoppingCart,
+    servicesItems,
+    setServicesItems
   };
   return (
     <HomeContext.Provider value={state}>

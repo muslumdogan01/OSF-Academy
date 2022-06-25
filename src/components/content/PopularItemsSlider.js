@@ -14,21 +14,24 @@ import "swiper/scss/pagination";
 
 const Slider = () => {
   return (
-<div className="flex flex-col md:hidden w-full px-4 bg-[#262a32] mt-5 pt-5 relative">
-<div class="flex flex-row px-1 items-center justify-center pb-10">
-          <div class="basis-1/2 flex flex-col justify-center">
+<div className="flex flex-col md:hidden w-full  bg-[#262a32] mt-5 py-7 px-4 ">
+<div className="relative ">
+<div class="flex flex-col items-center justify-center ">
+    <div className="flex flex-row w-full items-center">
+    <div class="basis-1/4 flex justify-center flex-col">
             <div className="border-[#3c4047] border border-b-1"></div>
           </div>
-          <div class="basis-full">
-            <h1 className="text-center text-white md:text-2xl text-2xl font-bold">
+          <div class="basis-1/2 flex justify-center items-center">
+            <h1 className="text-center text-white md:text-2xl text-2xl font-bold pb-5">
               Popular Items
             </h1>
           </div>
-          <div class="basis-1/2 flex flex-col justify-center">
+          <div class="basis-1/4 flex justify-center flex-col ">
             <div className="border-[#3c4047] border border-b-1"></div>
           </div>
-        </div>
-<Swiper
+    </div>
+
+    <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Autoplay, A11y]}
       spaceBetween={50}
@@ -54,9 +57,13 @@ const Slider = () => {
       <img src="popularItems/img4.png" style={{ width: "100%" }} alt="" />
       </SwiperSlide>
     </Swiper>
-    <div className="absolute bottom-0 left-0 z-20 bg-white px-11 text-center py-5 rounded-b-xl">
+        </div>
+        <div className="bg-white px-8 text-center py-5 rounded-b-xl ">
         <p className="text-[#45413e] text-base">Kristina Dam Oak Table With White Marble Top</p>
     </div>
+</div>
+
+
 </div>
   );
 };
