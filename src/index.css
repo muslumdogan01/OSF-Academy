@@ -88,8 +88,8 @@
 @media screen and (max-width: 600px) {
     .swiper {
  
-      width: 358px !important;
-      height: 400px !important;
+      width: 22.488rem !important;
+      height: 22.488rem !important;
       border-top-left-radius: 12px !important;
       border-top-right-radius: 12px !important;
       top: 0 !important;

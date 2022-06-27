@@ -10,7 +10,7 @@ const Categories = () => {
   return (
     <div className="relative ">
       <div className="inline-flex items-center pt-5" onClick={showContact}>
-        <span className="text-[#333333] font-semibold pr-2 ml-4">CATEGORIEST</span>
+        <span className="text-[#333333] font-semibold pr-2 ml-4">CATEGORIES</span>
         <Icon name="down" size={14} />
       </div>
       {showDetail ? (

@@ -40,7 +40,7 @@ const PopulerItemDetail = ({ item }) => {
                 onClick={() => {
                   favoriteItem();
                 }}
-                className="bg-white h-20 w-20 hover:bg-[#e6e6e6]   rounded-full flex  justify-center items-center"
+                className="bg-white h-20 w-20 hover:bg-[#e6e6e6] fill-[#e73c68]  rounded-full flex  justify-center items-center"
               >
                 <Icon name="heart" size={30} />
               </span>

@@ -30,35 +30,35 @@ const ShoppingCart = () => {
   return (
     <div className="bg-[#f1edea]">
       <div className="container mx-auto">
-        <div className="w-full flex justify-center items-center pt-16">
+        <div className="w-full flex justify-center items-center pt-10 md:pt-16">
           <ul className="flex justify-center items-center">
             <li className="text-[#84bc22] cursor-pointer">
               <Link to="/">Home</Link>
             </li>
             <li className="px-4">/</li>
-            <li className="text-[#45413e]">SHOPPİNG CART</li>
+            <li className="text-[#45413e]">SHOPPING CART</li>
           </ul>
         </div>
         <div className="flex container  justify-center items-center md:px-28 py-8">
-          <div className="basis-1/2 border-b-2 border-[#e5e2df]"></div>
-          <div className="basis-1/2 font-semibold text-5xl text-[#45413e] text-center">
-            SHOPPİNG CART
+          <div className="md:basis-1/2 basis-1/4 border-b-2 border-[#e5e2df]"></div>
+          <div className="md:basis-1/2 basis-full font-semibold text-3xl md:text-5xl text-[#45413e] text-center">
+          SHOPPING CART
           </div>
-          <div className="basis-1/2 border-b-2 border-[#e5e2df]"></div>
+          <div className="md:basis-1/2 basis-1/4 border-b-2 border-[#e5e2df]"></div>
         </div>
-        <div className="container px-28 pb-10">
-          <div class="bg-white shadow-2xl rounded-lg px-24 py-20 mt-4 flex flex-col justify-center">
+        <div className="container md:px-28 md:pb-10">
+          <div class="bg-white shadow-2xl rounded-lg md:px-24 md:py-20 flex flex-col justify-center">
             {shoppingCart.map((item) => {
               return (
-                <div className="flex mb-10 " key={item.id}>
-                  <div className="flex basis-1/2">
+                <div className="flex mb-10 md:flex-row flex-col" key={item.id}>
+                  <div className="flex basis-1/2 pt-5 md:pt-0 px-5">
                     <div className=" bg-[#c7c7c7] w-20 h-20"></div>
-                    <div className="flex flex-col justify-center pl-5">
-                      <p className="text-base text-[#45413e]">{item.name}</p>
+                    <div className="flex flex-col justify-around pl-5">
+                      <p className="text-base text-[#45413e] w-44 md:w-full">{item.name}</p>
                       <p className="text-sm text-[#bdc3c7]">$2,195.00</p>
                     </div>
                   </div>
-                  <div className="flex basis-1/2">
+                  <div className="flex basis-1/2 pt-5 md:pt-0">
                     <div className="flex items-center justify-around w-full">
                       <div className="flex rounded-full  border-2 px-6 pt-1 pb-2 justify-center items-center border-[#e8e2d6]">
                         <span
@@ -100,12 +100,12 @@ const ShoppingCart = () => {
               );
             })}
 
-            <div className="w-full border-b-2 border-[#e8e2d6] pt-24"></div>
-            <div className="basis-1/2  pt-16">
-              <div className="flex">
+            <div className="w-full border-b-2 border-[#e8e2d6] md:pt-24"></div>
+            <div className="basis-1/2 pt-8 md:pt-16 px-4">
+              <div className="flex md:flex-row flex-col">
                 <div className="basis-1/2">
-                  <div className="flex">
-                    <label class="relative block">
+                  <div className="flex md:flex-row flex-col">
+                    <label class="relative block ">
                       <span class="sr-only">Search</span>
                       <input
                         class="placeholder:italic placeholder:text-black block bg-white w-full border border-[#e8e2d6] rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
@@ -114,16 +114,18 @@ const ShoppingCart = () => {
                         name="search"
                       />
                     </label>
-                    <button className="border-2 border-[#84bc22] text-[#84bc22] px-8 rounded-full ml-3 ">
+                <div className="md:px-8 py-5 md:py-0">
+                <button className="border-2 border-[#84bc22] text-[#84bc22] px-8 rounded-full py-1 ">
                       Apply
                     </button>
+                </div>
                   </div>
                 </div>
                 <div className="basis-1/2">
-                  <button className="border-2 border-[#84bc22] text-[#84bc22] px-8 py-1 rounded-full ml-3 ">
+                  <button className="border-2 border-[#84bc22] text-[#84bc22] px-8 py-1 rounded-full md:ml-3 ">
                     UPDATE CART
                   </button>
-                  <button className="border-2 border-[#84bc22] text-white bg-[#84bc22] px-10 py-1 rounded-full ml-3 ">
+                  <button className="border-2 md:mt-0 mt-5 border-[#84bc22] text-white bg-[#84bc22] px-10 py-1 rounded-full md:ml-3 ">
                     PROCEED TO CHECKOUT
                   </button>
                   <div className="flex ml-3 pt-11">

@@ -13,6 +13,7 @@ import Product from "./components/product/Product";
 function App() {
   //Hamburger Menu State
   const [isOpen, setIsOpen] = useState(false);
+  const [addMobileFavorite, setAddMobileFavorite]= useState(0)
   //Add to cart icon State
   const [increment, setIncrement] = useState(0);
   const [favorite, setFavorite] = useState(0);
@@ -54,7 +55,9 @@ function App() {
     shoppingCart,
     setShoppingCart,
     servicesItems,
-    setServicesItems
+    setServicesItems,
+    addMobileFavorite,
+    setAddMobileFavorite
   };
   return (
     <HomeContext.Provider value={state}>

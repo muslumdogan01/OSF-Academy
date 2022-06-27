@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import Contact from "./footerMobile/Contact";
 import Categories from "./footerMobile/Categories";
 import About from "./footerMobile/About";
+import { HomeContext, useContext } from "../../context/Context";
 
 const Footer = () => {
+  const { addMobileFavorite, setAddMobileFavorite } = useContext(HomeContext);
   const ButtonMailto = ({ mailto, label }) => {
     return (
       <Link
@@ -50,20 +52,18 @@ const Footer = () => {
         <div className="basis-2/4 flex flex-col text-left md:items-center">
           <div className="hidden md:block">
             <ul className="text-[#45413e]">
-              <h1 className="font-semibold pb-7 text-[#333333]">CATEGORIEST</h1>
+              <h1 className="font-semibold pb-7 text-[#333333]">CATEGORIES</h1>
               <li className="pb-5 hover:text-[#84bc22] hover:underline">
                 <Link to="ErorPage">Alcohol</Link>
               </li>
-              <li className="pb-5">
-                <Link to="ErorPage hover:text-[#84bc22] hover:underline">
-                  Art
-                </Link>
+              <li className="pb-5 hover:text-[#84bc22] hover:underline">
+                <Link to="ErorPage">Art</Link>
               </li>
               <li className="pb-5 hover:text-[#84bc22] hover:underline">
-                Books
+                <Link to="ErorPage">Books</Link>
               </li>
               <li className="pb-5 hover:text-[#84bc22] hover:underline">
-                Drink
+                <Link to="ErorPage">Drink</Link>
               </li>
               <li>Electronics</li>
             </ul>
@@ -82,13 +82,13 @@ const Footer = () => {
               <Link to="ErorPage">Jewelry</Link>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              Kids & Baby
+              <Link to="ErorPage"> Kids & Baby</Link>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              Men's Fashion
+              <Link to="ErorPage"> Men's Fashion</Link>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              Mobile
+              <Link to="ErorPage"> Mobile</Link>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
               Motorcycles
@@ -166,24 +166,26 @@ const Footer = () => {
           </a>
         </div>
         <div className="w-full absolute bg-[#262a33] text-white flex md:hidden  bottom-0  py-4">
-      <div className="flex items-center justify-center w-full">
-      <span className="fill-[#909497]">
-            {" "}
-            <Icon name="search" size={24} />
-          </span>
-          <span className="fill-[#909497] px-12">
-            {" "}
-            <Icon name="profil" size={24} />
-          </span>
-          <span className="fill-[#909497]">
-            {" "}
-            <Icon name="heart" size={24} />
-          </span>
-          <span className="fill-[#909497] pl-12">
-            {" "}
-            <Icon name="shop" size={24} />
-          </span>
-      </div>
+          <div className="flex items-center justify-center w-full">
+            <span className="fill-[#909497]">
+              {" "}
+              <Icon name="search" size={24} />
+            </span>
+            <span className="fill-[#909497] px-12">
+              {" "}
+              <Icon name="profil" size={24} />
+            </span>
+            <span className="fill-[#909497] relative">
+              <Icon name="heart" size={24} />
+              <span className="absolute top-[-11px] right-[-12px] rounded-xl w-5 h-5 text-center flex justify-center items-center  border-2 z-10 border-[#84bc22] text-[#84bc22]">
+                {addMobileFavorite}
+              </span>
+            </span>
+            <span className="fill-[#909497] pl-12">
+              {" "}
+              <Icon name="shop" size={24} />
+            </span>
+          </div>
         </div>
       </div>
     </div>

@@ -53,9 +53,9 @@ const Modal = () => {
                 <Dialog.Panel className="w-full max-w-md  transform overflow-hidden rounded-xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg text-center pt-10 pb-10 md:text-[30px] font-medium leading-6 text-[#45413e]"
+                    className="text-lg text-center pt-10 pb-10 md:text-[30px] font-bold leading-6 text-[#45413e]"
                   >
-                    Sing in
+                    Sign in
                   </Dialog.Title>
                   <div className="mt-2">
                     <form>

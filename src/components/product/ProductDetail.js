@@ -60,9 +60,9 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="flex flex-row w-full">
-      <div className="basis-1/2 px-5 relative">
-        <div className="absolute top-5 left-10">
+    <div className="flex md:flex-row flex-col w-full">
+      <div className="basis-1/2  relative">
+        <div className="absolute top-5 md:left-10 left-5">
           <ImageZoom selectedImg={selectedImg} />
         </div>
         <img
@@ -71,7 +71,7 @@ const ProductDetail = () => {
           alt=""
         />
       </div>
-      <div className="basis-1/2 flex">
+      <div className="basis-1/2 flex px-5 md:px-0 pt-6 md:pt-0">
         <div className="basis-1/6">
           <div className="grid grid-rows-4 grid-flow-col gap-4">
             {images.map((img) => {
@@ -96,43 +96,43 @@ const ProductDetail = () => {
             })}
           </div>
         </div>
-        <div className="basis-auto pl-20 pt-3">
+        <div className="basis-auto md:pl-20 pt-3 pl-5">
           <p className="text-[#45413e] text-5xl font-bold">$299.99</p>
 
           <ColorButton />
 
           <div className="flex pt-5">
-            <div className="flex rounded-full  border-2 px-6  pb-2 justify-center items-center border-[#e8e2d6]">
+            <div className="flex rounded-full border-2 md:px-5 px-3 py-1 md:pb-2 justify-center items-center border-[#e8e2d6]">
               <span
                 onClick={() => {
                   decrease();
                 }}
-                className="text-2xl text-[#999999] cursor-pointer font-semibold"
+                className="text-2xl text-[#999999] py-0 px-1 md:px-2  cursor-pointer font-semibold"
               >
                 -
               </span>
-              <span className="px-5 text-2xl text-[#45413e]">
+              <span className="md:px-4  md:text-2xl py-0 px-1  text-[#45413e]">
                 {incrementButton}
               </span>
               <span
                 onClick={() => {
                   increase();
                 }}
-                className="text-2xl text-[#999999] cursor-pointer font-semibold"
+                className="md:px-2 md:text-2xl py-0 px-1 text-[#999999] cursor-pointer font-semibold"
               >
                 +
               </span>
             </div>
-            <div className="flex px-5">
+            <div className="flex md:px-5 ml-3 md:ml-0">
               <button
                 onClick={addToCart}
-                className="border-2 border-[#84bc22] text-white hover:bg-white hover:text-[#84bc22] transition-all duration-500 ease-in-out font-normal bg-[#84bc22] px-4 py-1 rounded-full  "
+                className="border-2 text-sm md:text-lg border-[#84bc22] text-white hover:bg-white hover:text-[#84bc22] transition-all duration-500 ease-in-out font-normal bg-[#84bc22] px-2 md:px-4 py-1 rounded-full  "
               >
                 ADD TO CART
               </button>
             </div>
           </div>
-          <div className="flex pt-14 pr-20 flex-col">
+          <div className="flex md:pt-14 md:pr-20 flex-col pt-5">
             {slice.map((more) => {
               return <p className="text-[#45413e] text-base">{more.name}</p>;
             })}
