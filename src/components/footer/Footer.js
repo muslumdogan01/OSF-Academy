@@ -182,7 +182,6 @@ const Footer = () => {
               </span>
             </span>
             <span className="fill-[#909497] pl-12">
-              {" "}
               <Icon name="shop" size={24} />
             </span>
           </div>
