@@ -91,8 +91,8 @@ const PopulerItems = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="mx-[8rem] flex flex-col">
-        <div className="grid md:grid-cols-4 gap-x-0 gap-y-5 md:gap-y-11 grid-cols-1">
+      <div className="xl:mx-[8rem] flex flex-col justify-center items-center">
+        <div className="grid md:grid-cols-4 gap-x-40 gap-y-8 xl:gap-x-10 xl:gap-y-10 ">
           {slice.map((item) => {
             return <PopulerItemDetail item={item} />;
           })}
