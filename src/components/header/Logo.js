@@ -25,7 +25,8 @@ const Logo = () => {
           />
         </Link>
         <Link to="/">
-          <img src="/logoMb.png" className="flex md:hidden"></img>
+          <img src="/logoMB.png" 
+          className="flex md:hidden" alt="OSF Academy" />
         </Link>
       </div>
     </div>
