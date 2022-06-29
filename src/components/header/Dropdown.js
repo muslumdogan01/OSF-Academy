@@ -1,6 +1,7 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { HomeContext, useContext } from "../../context/Context";
 
 const categories = [
   {
@@ -71,7 +72,11 @@ const categories2 = [
   },
 ];
 
-export default function Example({ name }) {
+export default function Dropdown({ name }) {
+  const { isOpen, setIsOpen } = useContext(HomeContext);
+
+
+
   return (
     <Popover className="w-full">
       {({ open }) => (
@@ -109,85 +114,110 @@ export default function Example({ name }) {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel className="absolute z-10 w-full transform  md:left-[0] left-[-1px] md:top-[66px]">
-              <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
-                <div className="relative grid gap-8 bg-[#262a32] p-11">
-                  <div className="container mx-auto px-5 ">
-                    <div class="flex flex-col md:flex-row text-white ">
-                      <div class="basis-1/2">
-                        <span>PRODUCT CATEGORIES</span>
-                        <ul className="mt-3">
-                          {categories.map((item) => {
-                            return (
-                              <li className="py-3 pb-0 cursor-text">
-                                <a
-                                  className="hover:text-[#84bc22] hover:underline"
-                                  href="ErorPage"
+      <Popover.Panel className="absolute z-10 w-full transform  md:left-[0] left-[-1px] md:top-[66px]">
+                <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
+                  <div className="relative grid gap-8 bg-[#262a32] p-11">
+                    <div className="container mx-auto px-5 ">
+                      <div class="flex flex-col md:flex-row text-white ">
+                        <div class="basis-1/2">
+                          <span>PRODUCT CATEGORIES</span>
+                          <ul className="mt-3">
+                            {categories.map((item) => {
+                              return (
+                                <li className="py-3 pb-0 cursor-text">
+                                  <a
+                                    className="hover:text-[#84bc22] hover:underline"
+                                    // href="ErorPage"
+                                  >
+                                    <Link
+                                      onClick={() => {
+                                        setIsOpen(!isOpen);
+                                      }}
+                                      to="ErorPage"
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  </a>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                        <div class="basis-1/2">
+                          <ul className="mt-8">
+                            {categories2.map((item, index) => {
+                              return (
+                                <li
+                                  key={index}
+                                  className="py-3 pb-0 cursor-text"
                                 >
-                                  {item.name}
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                      <div class="basis-1/2">
-                        <ul className="mt-8">
-                          {categories2.map((item, index) => {
-                            return (
-                              <li key={index} className="py-3 pb-0 cursor-text">
-                                <a
-                                  className="hover:text-[#84bc22] hover:underline"
-                                  href={item.href}
-                                >
-                                  {item.name}
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                      <div class="basis-1/2">
-                        <ul className="mt-8">
-                          {categories.map((item) => {
-                            return (
-                              <li className="py-3 pb-0 cursor-text">
-                                <a
-                                  className="hover:text-[#84bc22] hover:underline"
-                                  href={item.href}
-                                >
-                                  {item.name}
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                      <div class="basis-1/2">
-                        <span className="">SALES</span>
-                        <ul className="mt-3">
-                          {categories.map((item) => {
-                            return (
-                              <li className="py-3 pb-0 cursor-text">
-                                <a
-                                  className="hover:text-[#84bc22] hover:underline"
-                                  href={item.href}
-                                >
-                                  {item.name}
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                      <div class="basis-1/2 ">
-                        <img className="rounded-lg mt-5" src="/navPhoto.png" />
+                                  <a className="hover:text-[#84bc22] hover:underline">
+                                    <Link
+                                      onClick={() => {
+                                        setIsOpen(false);
+                                      }}
+                                      to="ErorPage"
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  </a>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                        <div class="basis-1/2">
+                          <ul className="mt-8">
+                            {categories.map((item) => {
+                              return (
+                                <li className="py-3 pb-0 cursor-text">
+                                  <a className="hover:text-[#84bc22] hover:underline">
+                                    <Link
+                                      onClick={() => {
+                                        setIsOpen(false);
+                                      }}
+                                      to="ErorPage"
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  </a>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                        <div class="basis-1/2">
+                          <span className="">SALES</span>
+                          <ul className="mt-3">
+                            {categories.map((item) => {
+                              return (
+                                <li className="py-3 pb-0 cursor-text">
+                                  <a className="hover:text-[#84bc22] hover:underline">
+                                    <Link
+                                      onClick={() => {
+                                        setIsOpen(false);
+                                      }}
+                                      to="ErorPage"
+                                    >
+                                      {item.name}
+                                    </Link>
+                                  </a>
+                                </li>
+                              );
+                            })}
+                          </ul>
+                        </div>
+                        <div class="basis-1/2 ">
+                          <img
+                            className="rounded-lg mt-5"
+                            src="/navPhoto.png"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Popover.Panel>
+              </Popover.Panel>
           </Transition>
         </>
       )}

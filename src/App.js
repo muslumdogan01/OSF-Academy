@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import ErorPage from "./components/ErorPage";
 import ShoppingCart from "./components/ShoppingCart";
 import Product from "./components/product/Product";
+import Cookies from "./components/content/Cookies";
 
 function App() {
   //Hamburger Menu State
@@ -21,6 +22,8 @@ function App() {
   const [loadMore, setLoadMore] = useState(8);
   //Services Items State
   const [servicesItems, setServicesItems]=useState(8)
+  //Cookies State
+  const [showCookies, setShowCookies] =useState(false)
   //Shopping Cart State
   const [shoppingCart, setShoppingCart] = useState([
     {
@@ -46,6 +49,8 @@ function App() {
   const state = {
     isOpen,
     setIsOpen,
+    showCookies,
+    setShowCookies,
     increment,
     setIncrement,
     favorite,
@@ -61,6 +66,7 @@ function App() {
   };
   return (
     <HomeContext.Provider value={state}>
+      <Cookies/>
       <header className="w-full relative border-b-[1px]">
         <Header />
       </header>
