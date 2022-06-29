@@ -17,6 +17,7 @@ import { Icon } from "../../Icons/Icon";
 
 const Slider = () => {
   const {addMobileFavorite, setAddMobileFavorite}= useContext(HomeContext)
+  const { isOpen, setIsOpen } = useContext(HomeContext);
 
   const incrementFavorite = ()=>{
     setAddMobileFavorite(addMobileFavorite + 1)
@@ -24,7 +25,7 @@ const Slider = () => {
 
   return (
     <div className="flex flex-col md:hidden w-full  bg-[#262a32] mt-5 py-7 px-4 ">
-      <div className="relative flex flex-col justify-center items-center">
+      <div className="relative flex flex-col justify-center items-center ">
         <div class="flex flex-col items-center justify-center">
           <div className="flex flex-row w-full items-center">
             <div class="basis-1/4 flex justify-center flex-col">
@@ -39,8 +40,8 @@ const Slider = () => {
               <div className="border-[#3c4047] border border-b-1"></div>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute rounded-t-xl group hover:bg-[#34c97c] opacity-90 top-0 left-0 w-full h-full z-50 flex justify-center items-center">
+          <div className="relative ">
+            { !isOpen ?   <div className="absolute rounded-t-xl group z-10 hover:bg-[#34c97c] opacity-90 top-0 left-0 w-full h-full  flex justify-center items-center">
           <Link to="Product">
           <span className="bg-white mr-4  hover:bg-[#e6e6e6] h-20 w-20 rounded-full flex justify-center items-center">
                 <Icon name="plus" size={30} />
@@ -51,7 +52,8 @@ const Slider = () => {
               className="bg-white hover:bg-[#e6e6e6] fill-[#e73c68] h-20 w-20 rounded-full flex justify-center items-center">
               <Icon name="heart" size={30} />
               </span>
-            </div>
+            </div>: <div className="hidden"></div>}
+          
             <Swiper
               // install Swiper modules
               modules={[Navigation, Pagination, Autoplay, A11y]}

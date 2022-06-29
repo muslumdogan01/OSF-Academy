@@ -114,7 +114,7 @@ export default function Dropdown({ name }) {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-      <Popover.Panel className="absolute z-10 w-full transform  md:left-[0] left-[-1px] md:top-[66px]">
+      <Popover.Panel className="absolute z-50 w-full transform  md:left-[0] left-[-1px] md:top-[66px]">
                 <div className="overflow-hidden shadow-lg ring-1 ring-black ring-opacity-5">
                   <div className="relative grid gap-8 bg-[#262a32] p-11">
                     <div className="container mx-auto px-5 ">
