@@ -8,13 +8,13 @@ const ShoppingCart = () => {
       id: 1,
       name: "Kristina Dam Oak Table With White Marble Top",
       price: Number(245),
-      count: 2,
+      count: 0,
     },
     {
       id: 2,
       name: "Activate Facial Mask and Charcoal Soap",
       price: Number(398),
-      count: 3,
+      count: 0,
     },
   ]);
   const [shippingCost, setShippingCost] = useState(0);
@@ -52,7 +52,7 @@ const ShoppingCart = () => {
   return (
     <div className="bg-[#f1edea]">
       <div className="container mx-auto">
-        <div className="w-full flex justify-center items-center pt-10 md:pt-16">
+        <div className="w-full flex justify-center items-center pt-10 md:pt-16 ">
           <ul className="flex justify-center items-center">
             <li className="text-[#84bc22] cursor-pointer">
               <Link to="/">Home</Link>
@@ -132,7 +132,7 @@ const ShoppingCart = () => {
                     <label class="relative block ">
                       <span class="sr-only">Search</span>
                       <input
-                        class="placeholder:italic placeholder:text-black block bg-white w-full border border-[#e8e2d6] rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+                        class="placeholder:italic placeholder:text-black block bg-white w-full border border-[#e8e2d6] rounded-full py-2 pl-9 pr-3 shadow-sm focus:outline-none text-[#84bc22] ring-0  active:border-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22] focus:border-[#84bc22]  sm:text-sm"
                         placeholder="Enter Coupon Code"
                         type="text"
                         name="search"
@@ -178,7 +178,7 @@ const ShoppingCart = () => {
                               type="radio"
                               value="10.00"
                               name="default-radio"
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                              class="w-4 h-4 text-[#84bc22] bg-gray-100 border-gray-300 ring-0 visited:ring-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22]"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
                               Flat Rate:
@@ -194,7 +194,7 @@ const ShoppingCart = () => {
                               value="0"
                               defaultChecked
                               name="default-radio"
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                              class="w-4 h-4 text-[#84bc22] bg-gray-100 border-gray-300 ring-0 visited:ring-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22]"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
                               Free Shipping
@@ -208,7 +208,7 @@ const ShoppingCart = () => {
                               type="radio"
                               value="60.00"
                               name="default-radio"
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                              class="w-4 h-4 text-[#84bc22] bg-gray-100 border-gray-300 ring-0 visited:ring-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22]"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
                               International:
@@ -223,7 +223,7 @@ const ShoppingCart = () => {
                               type="radio"
                               value="5.00"
                               name="default-radio"
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                              class="w-4 h-4 text-[#84bc22] bg-gray-100 border-gray-300 ring-0 visited:ring-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22]"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
                               Local Delivery:{" "}
@@ -238,7 +238,7 @@ const ShoppingCart = () => {
                               type="radio"
                               value="0"
                               name="default-radio"
-                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
+                              class="w-4 h-4 text-[#84bc22] bg-gray-100 border-gray-300 ring-0 visited:ring-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22]"
                             />
 
                             <span class="ml-2 text-[#45413e] font-normal">
@@ -255,7 +255,7 @@ const ShoppingCart = () => {
                         ORDER TOTAL:
                       </span>
                     </div>
-                    <div className="basis-1/2">{`$${totalPrice}`}</div>
+                    <div className="basis-1/2 text-3xl font-bold">{`$${totalPrice}`}</div>
                   </div>
                 </div>
               </div>

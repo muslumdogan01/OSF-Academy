@@ -16,16 +16,16 @@ const About = () => {
       <div className="absolute left-0 z-10  w-full bg-white">
          <ul className="text-[#45413e] ml-4">
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              <a href="ErorPage">Alcohol</a>
+              <a href="ErorPage">About us</a>
             </li>
             <li className="pb-5  hover:text-[#84bc22] hover:underline">
               <a href="ErorPage">
-                Art
+                Delivery
               </a>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
             <a href="ErorPage">
-                Books
+            Testimonials
               </a>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
@@ -39,12 +39,7 @@ const About = () => {
           <li className="pb-5 hover:text-[#84bc22] hover:underline cursor-pointer">
             Toys
           </li>
-          <li className="pb-5 hover:text-[#84bc22] hover:underline cursor-pointer">
-            Travel
-          </li>
-          <li className="pb-5 hover:text-[#84bc22] hover:underline cursor-pointer">
-            Women's Fashion
-          </li>
+ 
           </ul>
       </div>
     ) : null}

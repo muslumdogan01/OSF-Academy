@@ -86,7 +86,7 @@ const Header = () => {
                 ""
               )}
             </li>
-            <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
+            <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer ">
               <Modal />
             </li>
             <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer relative">
@@ -98,7 +98,6 @@ const Header = () => {
             <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer relative">
               <Link to="ShoppingCart">
                 <span className="absolute top-[-11px] right-[-12px] rounded-xl w-5 h-5 text-center flex justify-center items-center  border-2 z-10 border-[#84bc22] text-[#84bc22]">
-                  {" "}
                   {increment}{" "}
                 </span>
                 <img src="/shop.png" className="border-none" alt="Shopping" />

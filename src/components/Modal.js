@@ -1,9 +1,17 @@
 import React from "react";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { Icon } from "../Icons/Icon";
 
-const Modal = () => {
-  let [isOpen, setIsOpen] = useState(false);
+const Modal = ({ fillColor }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [changeVisibile, setChangeVisible] = useState(
+    <Icon name="showEyes" size={20} />
+  );
+
+  const handleVisible = () => {
+    setChangeVisible(!changeVisibile);
+  };
 
   function closeModal() {
     setIsOpen(false);
@@ -21,7 +29,11 @@ const Modal = () => {
           onClick={openModal}
           className="border-0 border-none "
         >
-          <img src="/profil.png" className="border-none" alt="Profile" />
+          {fillColor ? (
+            <Icon name="profil" size={24} />
+          ) : (
+            <img src="/profil.png" className="border-none" alt="Profile" />
+          )}
         </button>
       </div>
 
@@ -65,35 +77,49 @@ const Modal = () => {
                         </span>
                         <input
                           type="email"
-                          class="peer ... mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-2xl text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                          className=" peer ... mt-1 block w-full px-3 py-2 bg-white border border-[#d7d7d7] rounded-2xl text-sm shadow-sm 
+                          focus:outline-none text-[#84bc22] ring-0  active:border-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22] focus:border-[#84bc22]
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
       invalid:border-pink-500 invalid:text-pink-600
       focus:invalid:border-pink-500 focus:invalid:ring-pink-500
     "
                         />
+
                         <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
                           Please provide a valid email address.
                         </p>
                       </label>
-                      <label class="block">
+                      <label class="block relative">
                         <div className="flex items-center justify-between">
-                        <span class="block text-sm font-medium  text-[#45413e]">
-                        Password
-                        </span>
-                        <span class="block text-sm font-medium cursor-pointer text-[#84bc22]">
-                          Forgot password
-                        </span>
+                          <span class="block text-sm font-medium  text-[#45413e]">
+                            Password
+                          </span>
+                          <span class="block text-sm font-medium cursor-pointer text-[#84bc22]">
+                            Forgot password
+                          </span>
                         </div>
+
                         <input
-                          type="password"
-                          class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-2xl text-sm shadow-sm placeholder-slate-400
-      focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
+                          type={changeVisibile? "text": "password"}
+                          class="mt-1 block w-full px-3 py-2 bg-white border border-[#d7d7d7] rounded-2xl text-sm shadow-sm
+                          focus:outline-none text-[#84bc22] ring-0  active:border-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22] focus:border-[#84bc22]
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
       invalid:border-pink-500 invalid:text-pink-600
       focus:invalid:border-pink-500 focus:invalid:ring-pink-500
     "
                         />
+                        <span
+                          onClick={() => {
+                            handleVisible();
+                          }}
+                          className="absolute right-2 top-1/2 fill-[#d7d7d7]"
+                        >
+                          {changeVisibile ? (
+                            <Icon name="showEyes" size={20} />
+                          ) : (
+                            <Icon name="closeEyes" size={20} />
+                          )}
+                        </span>
                       </label>
                     </form>
                   </div>
@@ -104,9 +130,11 @@ const Modal = () => {
                       className="inline-flex justify-center rounded-md border border-transparent bg-[#84bc22] px-4 py-2  text-sm font-medium text-white hover:bg-[#ace151] focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                       onClick={closeModal}
                     >
-                     Login
+                      Login
                     </button>
-                    <p className="pt-5 text-[#84bc22] cursor-pointer ">I don't have an account</p>
+                    <p className="pt-5 text-[#84bc22] cursor-pointer ">
+                      I don't have an account
+                    </p>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

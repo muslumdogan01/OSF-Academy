@@ -5,6 +5,7 @@ import Contact from "./footerMobile/Contact";
 import Categories from "./footerMobile/Categories";
 import About from "./footerMobile/About";
 import { HomeContext, useContext } from "../../context/Context";
+import Modal from "../Modal";
 
 const Footer = () => {
   const { addMobileFavorite, setAddMobileFavorite } = useContext(HomeContext);
@@ -54,16 +55,16 @@ const Footer = () => {
             <ul className="text-[#45413e]">
               <h1 className="font-semibold pb-7 text-[#333333]">CATEGORIES</h1>
               <li className="pb-5 hover:text-[#84bc22] hover:underline">
-                <Link to="ErorPage">Alcohol</Link>
+                <a href="ErorPage">Alcohol</a>
               </li>
               <li className="pb-5 hover:text-[#84bc22] hover:underline">
-                <Link to="ErorPage">Art</Link>
+                <a href="ErorPage">Art</a>
               </li>
               <li className="pb-5 hover:text-[#84bc22] hover:underline">
-                <Link to="ErorPage">Books</Link>
+                <a href="ErorPage">Books</a>
               </li>
               <li className="pb-5 hover:text-[#84bc22] hover:underline">
-                <Link to="ErorPage">Drink</Link>
+                <a href="ErorPage">Drink</a>
               </li>
               <li>Electronics</li>
             </ul>
@@ -76,19 +77,19 @@ const Footer = () => {
         <div className="basis-2/4  md:flex-col items-center hidden md:flex ">
           <ul className="text-[#45413e] pt-12">
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              <Link to="ErorPage">Home</Link>
+              <a href="ErorPage">Home</a>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              <Link to="ErorPage">Jewelry</Link>
+              <a href="ErorPage">Jewelry</a>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              <Link to="ErorPage"> Kids & Baby</Link>
+              <a href="ErorPage">Kids & Baby</a>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              <Link to="ErorPage"> Men's Fashion</Link>
+              <a href="ErorPage">Men's Fashion</a>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
-              <Link to="ErorPage"> Mobile</Link>
+              <a href="ErorPage">Mobile</a>
             </li>
             <li className="pb-5 hover:text-[#84bc22] hover:underline">
               Motorcycles
@@ -172,8 +173,7 @@ const Footer = () => {
               <Icon name="search" size={24} />
             </span>
             <span className="fill-[#909497] px-12">
-              {" "}
-              <Icon name="profil" size={24} />
+              <Modal fillColor="fill-[#909497]" />
             </span>
             <span className="fill-[#909497] relative">
               <Icon name="heart" size={24} />
@@ -181,8 +181,10 @@ const Footer = () => {
                 {addMobileFavorite}
               </span>
             </span>
-            <span className="fill-[#909497] pl-12">
-              <Icon name="shop" size={24} />
+            <span className=" pl-12">
+             <a href="ShoppingCart" className="fill-[#909497]">
+             <Icon name="shop" size={24} />
+             </a>
             </span>
           </div>
         </div>
