@@ -71,7 +71,7 @@ const ProductDetail = () => {
           alt=""
         />
       </div>
-      <div className="basis-1/2 flex px-5 md:px-0 pt-6 md:pt-0">
+      <div className="basis-1/2 flex px-5  pt-6 md:pt-0">
         <div className="basis-1/6">
           <div className="grid grid-rows-4 grid-flow-col gap-4">
             {images.map((img) => {
