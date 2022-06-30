@@ -14,37 +14,17 @@ import Cookies from "./components/Cookies";
 function App() {
   //Hamburger Menu State
   const [isOpen, setIsOpen] = useState(false);
-  const [addMobileFavorite, setAddMobileFavorite]= useState(0)
+  const [addMobileFavorite, setAddMobileFavorite] = useState(0);
   //Add to cart icon State
   const [increment, setIncrement] = useState(0);
   const [favorite, setFavorite] = useState(0);
   //Populer Items State
   const [loadMore, setLoadMore] = useState(8);
   //Services Items State
-  const [servicesItems, setServicesItems]=useState(8)
+  const [servicesItems, setServicesItems] = useState(8);
   //Cookies State
-  const [showCookies, setShowCookies] =useState(true)
-  //Shopping Cart State
-  const [shoppingCart, setShoppingCart] = useState([
-    {
-      id: 1,
-      name: "Kristina Dam Oak Table With White Marble Top",
-      price: Number(245),
-      count:0,
-      orderTotal: Number(1.447.toFixed(3)),
-      flatRate: Number(10.00),
-      international: Number(60.00),
-      delivery: Number(5.10),
-    },
-    {
-      id: 2,
-      name: "Activate Facial Mask and Charcoal Soap",
-      price: Number(398),
-      count:0,
-      orderTotal: Number(1.447.toFixed(3)),
-     
-    }
-  ]);
+  const [showCookies, setShowCookies] = useState(false);
+
 
   const state = {
     isOpen,
@@ -57,16 +37,14 @@ function App() {
     setFavorite,
     loadMore,
     setLoadMore,
-    shoppingCart,
-    setShoppingCart,
     servicesItems,
     setServicesItems,
     addMobileFavorite,
-    setAddMobileFavorite
+    setAddMobileFavorite,
   };
   return (
     <HomeContext.Provider value={state}>
-      <Cookies/>
+      <Cookies />
       <header className="w-full relative border-b-[1px]">
         <Header />
       </header>
@@ -74,14 +52,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="Services" element={<Services />} />
-          <Route path="ErorPage" element={<ErorPage/>} />
-          <Route path="ShoppingCart" element={<ShoppingCart/>} />
-          <Route path="Product" element={<Product/>}/>
+          <Route path="ErorPage" element={<ErorPage />} />
+          <Route path="ShoppingCart" element={<ShoppingCart />} />
+          <Route path="Product" element={<Product />} />
           <Route path="PopulerItems/:id" element={<PopulerItems />} />
         </Routes>
       </main>
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </HomeContext.Provider>
   );

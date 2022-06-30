@@ -1,31 +1,53 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { HomeContext, useContext } from "../context/Context";
 
 const ShoppingCart = () => {
-  const { shoppingCart, setShoppingCart } = useContext(HomeContext);
-  const [shipping, setShipping] = useState(10);
-  const [increment, setIncrement] = useState(Number((2.548).toFixed(3)));
+  const [shoppingCart, setShoppingCart] = useState([
+    {
+      id: 1,
+      name: "Kristina Dam Oak Table With White Marble Top",
+      price: Number(245),
+      count: 2,
+    },
+    {
+      id: 2,
+      name: "Activate Facial Mask and Charcoal Soap",
+      price: Number(398),
+      count: 3,
+    },
+  ]);
+  const [shippingCost, setShippingCost] = useState(0);
 
   const incrementPrice = (item) => {
-    item.count = item.count + 1;
-    setIncrement(item.count);
-    item.orderTotal = item.price * item.count.toFixed(3);
+    setShoppingCart((prev) => {
+      return prev.map((prevItem) => {
+        if (prevItem.id === item.id) {
+          return { ...prevItem, count: prevItem.count - 1 };
+        } else return prevItem;
+      });
+    });
   };
 
   const decreasePrice = (item) => {
-    item.count = item.count - 1;
-    setIncrement(item.count);
-    // item.price = item.price - Number((2.548).toFixed(3));
-    item.orderTotal = item.price * item.count;
+    setShoppingCart((prev) => {
+      return prev.map((prevItem) => {
+        if (prevItem.id === item.id) {
+          return { ...prevItem, count: prevItem.count + 1 };
+        } else return prevItem;
+      });
+    });
   };
 
   const removeItem = (item) => {
     setShoppingCart(shoppingCart.filter((cartItem) => cartItem.id !== item.id));
   };
 
-
-
+  const totalPrice = useMemo(() => {
+    return shoppingCart.reduce((acc, item) => {
+      return acc + item.price * item.count;
+    }, 0) + shippingCost;
+  }, [shoppingCart, shippingCost]);
 
   return (
     <div className="bg-[#f1edea]">
@@ -42,7 +64,7 @@ const ShoppingCart = () => {
         <div className="flex container  justify-center items-center md:px-28 py-8">
           <div className="md:basis-1/2 basis-1/4 border-b-2 border-[#e5e2df]"></div>
           <div className="md:basis-1/2 basis-full font-semibold text-3xl md:text-5xl text-[#45413e] text-center">
-          SHOPPING CART
+            SHOPPING CART
           </div>
           <div className="md:basis-1/2 basis-1/4 border-b-2 border-[#e5e2df]"></div>
         </div>
@@ -54,7 +76,9 @@ const ShoppingCart = () => {
                   <div className="flex basis-1/2 pt-5 md:pt-0 px-5">
                     <div className=" bg-[#c7c7c7] w-20 h-20"></div>
                     <div className="flex flex-col justify-around pl-5">
-                      <p className="text-base text-[#45413e] w-44 md:w-full">{item.name}</p>
+                      <p className="text-base text-[#45413e] w-44 md:w-full">
+                        {item.name}
+                      </p>
                       <p className="text-sm text-[#bdc3c7]">$2,195.00</p>
                     </div>
                   </div>
@@ -63,7 +87,7 @@ const ShoppingCart = () => {
                       <div className="flex rounded-full  border-2 px-6 pt-1 pb-2 justify-center items-center border-[#e8e2d6]">
                         <span
                           onClick={() => {
-                            decreasePrice(item);
+                            incrementPrice(item);
                           }}
                           className="text-2xl text-[#999999] cursor-pointer font-semibold"
                         >
@@ -74,7 +98,7 @@ const ShoppingCart = () => {
                         </span>
                         <span
                           onClick={() => {
-                            incrementPrice(item);
+                            decreasePrice(item);
                           }}
                           className="text-2xl text-[#999999] cursor-pointer font-semibold"
                         >
@@ -82,7 +106,7 @@ const ShoppingCart = () => {
                         </span>
                       </div>
                       <span className="text-[#45413e] text-3xl font-bold">
-                        ${item.orderTotal}
+                        ${item.price * item.count}
                       </span>
                       <div className="hover:bg-[#e8e2d6] hover:text-white transition-all duration-500 ease-in-out rounded-full border-2 flex items-center justify-center px-3 pb-2 cursor-pointer border-[#e8e2d6] ">
                         <span
@@ -114,11 +138,11 @@ const ShoppingCart = () => {
                         name="search"
                       />
                     </label>
-                <div className="md:px-8 py-5 md:py-0">
-                <button className="border-2 border-[#84bc22] text-[#84bc22] px-8 rounded-full py-1 ">
-                      Apply
-                    </button>
-                </div>
+                    <div className="md:px-8 py-5 md:py-0">
+                      <button className="border-2 border-[#84bc22] text-[#84bc22] px-8 rounded-full py-1 ">
+                        Apply
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="basis-1/2">
@@ -141,18 +165,23 @@ const ShoppingCart = () => {
                       SHIPPING AND HANDLING:
                     </div>
                     <div className="basis-1/2 font-bold">
-                      <div className="flex flex-col">
+                      <div
+                        className="flex flex-col"
+                        onChange={(e) => {
+                          setShippingCost(parseInt(e.target.value));
+                        }}
+                      >
                         <div>
                           <label class="inline-flex items-center">
                             <input
                               id="default-radio-1"
                               type="radio"
-                              value=""
+                              value="10.00"
                               name="default-radio"
                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
                             <span class="ml-2 text-[#45413e] font-normal">
-                              Flat Rate:{" "}
+                              Flat Rate:
                               <span className="font-bold">$10.00</span>
                             </span>
                           </label>
@@ -162,7 +191,7 @@ const ShoppingCart = () => {
                             <input
                               id="default-radio-1"
                               type="radio"
-                              value=""
+                              value="0"
                               defaultChecked
                               name="default-radio"
                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
@@ -177,7 +206,7 @@ const ShoppingCart = () => {
                             <input
                               id="default-radio-1"
                               type="radio"
-                              value=""
+                              value="60.00"
                               name="default-radio"
                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
@@ -192,7 +221,7 @@ const ShoppingCart = () => {
                             <input
                               id="default-radio-1"
                               type="radio"
-                              value=""
+                              value="5.00"
                               name="default-radio"
                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
@@ -207,7 +236,7 @@ const ShoppingCart = () => {
                             <input
                               id="default-radio-1"
                               type="radio"
-                              value=""
+                              value="0"
                               name="default-radio"
                               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
                             />
@@ -226,15 +255,7 @@ const ShoppingCart = () => {
                         ORDER TOTAL:
                       </span>
                     </div>
-                    <div className="basis-1/2">
-                    {shoppingCart.map((price)=>{
-                      return(
-                        <span className="font-semibold text-[#45413e] text-5xl">
-                        {price.id === 1 ? "$"+price.orderTotal:""}
-                      </span>
-                      )
-                    })}
-                    </div>
+                    <div className="basis-1/2">{`$${totalPrice}`}</div>
                   </div>
                 </div>
               </div>

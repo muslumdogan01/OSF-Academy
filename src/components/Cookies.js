@@ -8,10 +8,14 @@ const Cookies = () => {
 
   function closeModal() {
     setShowCookies(false);
+    localStorage.setItem("COOKIES_ACCEPTED", true);
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowCookies(true),6000);
+    const isAccepted = JSON.parse(localStorage.getItem("COOKIES_ACCEPTED"));
+    if (isAccepted) return;
+
+    const timer = setTimeout(() => setShowCookies(true), 1000);
     return () => {
       clearTimeout(timer);
       setShowCookies(false);
@@ -77,9 +81,13 @@ const Cookies = () => {
                         >
                           ACCEPT
                         </button>
-                        <span className="absolute right-0 top-[-1rem] text-2xl text-[#45413e] font-semibold cursor-pointer" onClick={closeModal}>X</span>
+                        <span
+                          className="absolute right-0 top-[-1rem] text-2xl text-[#45413e] font-semibold cursor-pointer"
+                          onClick={closeModal}
+                        >
+                          X
+                        </span>
                       </div>
-
                     </div>
                   </Dialog.Panel>
                 </Transition.Child>
