@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icon } from "../../Icons/Icon";
 import Dropdown from "./Dropdown";
 import Logo from "./Logo";
@@ -10,6 +10,7 @@ const Header = () => {
   const { isOpen, setIsOpen } = useContext(HomeContext);
   const { increment } = useContext(HomeContext);
   const { favorite } = useContext(HomeContext);
+  const [showSearch, setShowSearch] = useState(false);
 
   return (
     <div className="container mx-auto">
@@ -38,23 +39,21 @@ const Header = () => {
               CONTACT US
             </li>
             <li className="mx-4 my-6 md:my-0 text-header-text text-[14px]  md:flex hidden  cursor-pointer">
-              <div className="flex items-center">
-                <select
-                  id="currency"
-                  name="currency"
-                  className="focus:outline-none focus:ring-0 w-12 cursor-pointer text-[#b1b0b0] h-full py-0 pr-1 border-0 border-none bg-transparent sm:text-sm rounded-md"
-                >
-                  <option className="border-0 border-none text-[#b1b0b0]">
-                    EN
-                  </option>
-                  <option className="border-0 border-none text-[#b1b0b0]">
-                    FR
-                  </option>
-                  <option className="border-0 border-none text-[#b1b0b0]">
-                    UA
-                  </option>
-                </select>
-              </div>
+              <select
+                id="currency"
+                name="currency"
+                className="focus:outline-none w-12  focus:ring-0 cursor-pointer text-[#b1b0b0]  py-0 pr-1 border-0 border-none bg-transparent sm:text-sm rounded-md"
+              >
+                <option className="border-0 border-none text-[#b1b0b0] ">
+                  EN
+                </option>
+                <option className="border-0 border-none text-[#b1b0b0] ">
+                  FR
+                </option>
+                <option className="border-0 border-none text-[#b1b0b0] ">
+                  UA
+                </option>
+              </select>
             </li>
             <li className="my-6 md:my-0 text-header-text text-[14px] md:flex hidden  cursor-pointer">
               <div className="flex items-center ">
@@ -62,7 +61,7 @@ const Header = () => {
                 <select
                   id="currency"
                   name="currency"
-                  className="focus:outline-none focus:ring-0 cursor-pointer  text-[#b1b0b0] border-none w-14 py-0 pr-1 border-0  bg-transparent sm:text-sm rounded-md"
+                  className="focus:outline-none focus:ring-0 cursor-pointer text-[#b1b0b0] border-none w-14 py-0 pr-1 border-0  bg-transparent sm:text-sm rounded-md"
                 >
                   <option className="border-0 border-none">USD</option>
                   <option className="border-0 border-none">CAD</option>
@@ -70,15 +69,28 @@ const Header = () => {
                 </select>
               </div>
             </li>
-            <li className="mx-4 my-6 md:my-0 md:flex hidden cursor-pointer">
-              <img src="/search.png" className="border-none" alt="Search" />
+            <li className="mx-4 my-6 md:my-0 md:flex hidden cursor-pointer relative">
+              <img
+                onClick={() => {
+                  setShowSearch(!showSearch);
+                }}
+                src="/search.png"
+                className="border-none"
+                alt="Search"
+              />
+              {showSearch ? (
+                <div className="absolute top-6 right-0 transition translate-x-10 duration-500 ease-in-out">
+                  <input className="w-32 h-7 rounded-full transition duration-500 ease-in-out" type="text" placeholder="Search" />
+                </div>
+              ) : (
+                ""
+              )}
             </li>
             <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer">
               <Modal />
             </li>
             <li className="mx-4 my-6 md:my-0 md:flex hidden  cursor-pointer relative">
               <span className="absolute top-[-11px] right-[-12px] rounded-xl w-5 h-5 text-center flex justify-center items-center  border-2 z-10 border-[#84bc22] text-[#84bc22]">
-                {" "}
                 {favorite}{" "}
               </span>
               <img src="/heart.png" className="border-none" alt="Favorite" />

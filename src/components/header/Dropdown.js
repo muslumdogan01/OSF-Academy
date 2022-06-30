@@ -76,12 +76,12 @@ export default function Dropdown({ name }) {
   const { isOpen, setIsOpen } = useContext(HomeContext);
 
 
-
   return (
     <Popover className="w-full">
       {({ open }) => (
         <>
           <Popover.Button
+          
             className={`
                 ${open ? "" : "text-opacity-90"}
                 group inline-flex items-center rounded-md  text-[14px] text-base  hover:text-opacity-100 focus:outline-none `}
@@ -130,13 +130,15 @@ export default function Dropdown({ name }) {
                                     // href="ErorPage"
                                   >
                                     <Link
-                                      onClick={() => {
-                                        setIsOpen(!isOpen);
-                                      }}
+                                      // onClick={() => {
+                                      //   setIsOpen(!isOpen);
+                                      // }}
+                                     
                                       to="ErorPage"
                                     >
                                       {item.name}
                                     </Link>
+                                 
                                   </a>
                                 </li>
                               );

@@ -165,7 +165,7 @@ const Footer = () => {
             <Icon name="pinterest" size={24} />
           </a>
         </div>
-        <div className="w-full absolute bg-[#262a33] text-white flex md:hidden  bottom-0  py-4">
+        <div className="w-full absolute bg-[#262a33] text-white flex md:hidden   bottom-0  py-4">
           <div className="flex items-center justify-center w-full">
             <span className="fill-[#909497]">
               {" "}
@@ -177,7 +177,7 @@ const Footer = () => {
             </span>
             <span className="fill-[#909497] relative">
               <Icon name="heart" size={24} />
-              <span className="absolute top-[-11px] right-[-12px] rounded-xl w-5 h-5 text-center flex justify-center items-center  border-2 z-10 border-[#84bc22] text-[#84bc22]">
+              <span className="absolute top-[-11px] right-[-12px] rounded-xl w-5 h-5 text-center flex justify-center items-center  border-2  border-[#84bc22] text-[#84bc22]">
                 {addMobileFavorite}
               </span>
             </span>

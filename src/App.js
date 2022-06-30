@@ -9,7 +9,7 @@ import Footer from "./components/footer/Footer";
 import ErorPage from "./components/ErorPage";
 import ShoppingCart from "./components/ShoppingCart";
 import Product from "./components/product/Product";
-import Cookies from "./components/content/Cookies";
+import Cookies from "./components/Cookies";
 
 function App() {
   //Hamburger Menu State
@@ -23,7 +23,7 @@ function App() {
   //Services Items State
   const [servicesItems, setServicesItems]=useState(8)
   //Cookies State
-  const [showCookies, setShowCookies] =useState(false)
+  const [showCookies, setShowCookies] =useState(true)
   //Shopping Cart State
   const [shoppingCart, setShoppingCart] = useState([
     {
