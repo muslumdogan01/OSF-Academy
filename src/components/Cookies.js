@@ -15,7 +15,7 @@ const Cookies = () => {
     const isAccepted = JSON.parse(localStorage.getItem("COOKIES_ACCEPTED"));
     if (isAccepted) return;
 
-    const timer = setTimeout(() => setShowCookies(true), 1000);
+    const timer = setTimeout(() => setShowCookies(true), 5000);
     return () => {
       clearTimeout(timer);
       setShowCookies(false);

@@ -100,7 +100,7 @@ const Modal = ({ fillColor }) => {
                         </div>
 
                         <input
-                          type={changeVisibile? "text": "password"}
+                          type={changeVisibile ? "text" : "password"}
                           class="mt-1 block w-full px-3 py-2 bg-white border border-[#d7d7d7] rounded-2xl text-sm shadow-sm
                           focus:outline-none text-[#84bc22] ring-0  active:border-[#84bc22] active:ring-[#84bc22] focus:ring-[#84bc22] focus:border-[#84bc22]
       disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none
