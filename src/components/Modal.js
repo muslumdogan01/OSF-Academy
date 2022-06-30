@@ -112,7 +112,7 @@ const Modal = ({ fillColor }) => {
                           onClick={() => {
                             handleVisible();
                           }}
-                          className="absolute right-2 top-1/2 fill-[#d7d7d7]"
+                          className="absolute right-2 top-1/2 fill-[#d7d7d7] cursor-pointer"
                         >
                           {changeVisibile ? (
                             <Icon name="showEyes" size={20} />
